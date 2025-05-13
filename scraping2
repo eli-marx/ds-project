@@ -173,8 +173,59 @@ def save_to_csv(reviews, filename=None):
     except Exception as e:
         print(f"Error saving to CSV: {e}")
 
+def scrape_all_pages(base_url, limit_per_page=20, max_pages=50):
+    """
+    Scrape all pages until no more reviews are found
+    :param base_url: URL without start parameter
+    :param limit_per_page: Number of reviews per page (usually 20)
+    :param max_pages: Safety limit to prevent infinite loops
+    """
+    all_reviews = []
+    current_page = 0
+    
+    while current_page < max_pages:
+        print(f"\n{'='*50}")
+        print(f"Scraping page {current_page + 1} (starting from review #{current_page * limit_per_page})")
+        print(f"{'='*50}")
+        
+        # Construct URL for current page
+        base_without_start = base_url.split('&start=')[0] if '&start=' in base_url else base_url
+        url = f"{base_without_start}&start={current_page * limit_per_page}"
+        print(f"URL: {url}")
+        
+        # Scrape the page
+        page_reviews = scrape_single_page(url)
+        
+        # Check if we got any reviews
+        if not page_reviews:
+            print(f"No reviews found on page {current_page + 1}. We've reached the end!")
+            break
+        
+        # Check if we got fewer reviews than expected (last page)
+        all_reviews.extend(page_reviews)
+        print(f"Successfully scraped {len(page_reviews)} reviews from page {current_page + 1}")
+        print(f"Total reviews collected so far: {len(all_reviews)}")
+        
+        # If we got fewer than the limit, this is the last page
+        if len(page_reviews) < limit_per_page:
+            print(f"Got {len(page_reviews)} reviews (less than {limit_per_page}). This appears to be the last page!")
+            break
+        
+        # Prepare for next page
+        current_page += 1
+        
+        # Random delay between pages (but not after the last page)
+        delay = random.uniform(5, 10)
+        print(f"Waiting {delay:.1f} seconds before next page...")
+        time.sleep(delay)
+    
+    if current_page >= max_pages:
+        print(f"\nWarning: Reached maximum page limit ({max_pages}). There might be more reviews available.")
+    
+    return all_reviews
+
 def scrape_multiple_pages(base_url, num_pages=5):
-    """Scrape multiple pages of reviews"""
+    """Scrape a specific number of pages (keeping old function for backward compatibility)"""
     all_reviews = []
     
     # The base URL should NOT include the start parameter
@@ -311,7 +362,6 @@ def scrape_single_page(url):
 
 def main():
     print("Starting Douban movie comments scraper...")
-     
     """
     # Option 1: Scrape just the first page
     print("\nOption 1: Scraping first page only...")
@@ -320,15 +370,27 @@ def main():
     if reviews:
         save_to_csv(reviews, 'douban_reviews_single_page.csv')
     """
-    # Option 2: Scrape multiple pages (uncomment to use)
-   
-    print("\nOption 2: Scraping multiple pages...")
+    # Option 2: Scrape a specific number of pages
+    """
+    print("\nOption 2: Scraping 3 pages...")
     base_url = "https://movie.douban.com/subject/30314848/comments?percent_type=l&limit=20&status=P&sort=new_score"
     all_reviews = scrape_multiple_pages(base_url, num_pages=3)
     
     if all_reviews:
-        save_to_csv(all_reviews, 'douban_reviews_multiple_pages.csv')
+        save_to_csv(all_reviews, 'douban_reviews_specific_pages.csv')
         print(f"\nTotal reviews collected: {len(all_reviews)}")
+    """
+    
+    # Option 3: Scrape ALL pages until no more reviews are found
+    
+    print("\nOption 3: Scraping ALL pages...")
+    base_url = "https://movie.douban.com/subject/30314848/comments?percent_type=l&limit=20&status=P&sort=new_score"
+    all_reviews = scrape_all_pages(base_url, limit_per_page=20, max_pages=100)
+    
+    if all_reviews:
+        save_to_csv(all_reviews, 'douban_reviews_all_pages.csv')
+        print(f"\nTotal reviews collected: {len(all_reviews)}")
+    
 
 if __name__ == "__main__":
     main()
