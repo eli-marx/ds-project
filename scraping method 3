@@ -8,7 +8,7 @@ from datetime import datetime
 warnings.filterwarnings('ignore')
 
 def scrape_reviews():
-    url = "https://movie.douban.com/subject/30314848/comments?percent_type=l&start=0&limit=20&status=P&sort=new_score"
+    url = f"https://movie.douban.com/subject/{MOVIE_ID}/comments?percent_type=l&start=0&limit=20&status=P&sort=new_score"
     
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -189,8 +189,9 @@ def scrape_all_pages(base_url, limit_per_page=20, max_pages=50):
         print(f"{'='*50}")
         
         # Construct URL for current page
-        base_without_start = base_url.split('&start=')[0] if '&start=' in base_url else base_url
-        url = f"{base_without_start}&start={current_page * limit_per_page}"
+        base_without_start = base_url.split('?start=')[0] if '?start=' in base_url else base_url
+        base_end = base_url.split('?start=')[1][2:]
+        url = f"{base_without_start}?start={current_page * limit_per_page}{base_end}"
         print(f"URL: {url}")
         
         # Scrape the page
@@ -383,8 +384,11 @@ def main():
     
     # Option 3: Scrape ALL pages until no more reviews are found
     
+    MOVIE_ID = '30314848'
+
     print("\nOption 3: Scraping ALL pages...")
-    base_url = "https://movie.douban.com/subject/30314848/comments?percent_type=l&limit=20&status=P&sort=new_score"
+    base_url = f"https://movie.douban.com/subject/{MOVIE_ID}/comments?percent_type=l&limit=20&status=P&sort=new_score"
+    base_url = "https://movie.douban.com/subject/30314848/comments?start=00&limit=20&status=P&sort=new_score"
     all_reviews = scrape_all_pages(base_url, limit_per_page=20, max_pages=100)
     
     if all_reviews:
