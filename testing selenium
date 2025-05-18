@@ -1,0 +1,120 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
+import csv
+from datetime import datetime
+
+# MANUAL SETTINGS - Change these values as needed
+MANUAL_TITLE = "Avatar"  # Set your movie/show title here
+MANUAL_RATING = "1"      # Set your rating here (e.g., "1", "2", "3", etc.)
+
+def save_to_csv(reviews, filename=None):
+    """Save reviews to CSV file"""
+    if not reviews:
+        print("No reviews to save")
+        return
+
+    if filename is None:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        safe_title = MANUAL_TITLE.replace(" ", "_").replace(":", "").replace("/", "_")
+        filename = f"{safe_title}_rating_{MANUAL_RATING}_reviews_{timestamp}.csv"
+
+    try:
+        with open(filename, 'w', newline='', encoding='utf-8-sig') as csvfile:
+            fieldnames = ['title', 'comment', 'rating']
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+            writer.writeheader()
+            for review in reviews:
+                writer.writerow(review)
+
+        print(f"\n✅ Saved {len(reviews)} reviews to {filename}")
+    except Exception as e:
+        print(f"❌ Error saving to CSV: {e}")
+
+# Initialize visible Chrome for debugging
+options = webdriver.ChromeOptions()
+# Comment this out to watch the browser
+# options.add_argument("--headless")  
+driver = webdriver.Chrome(options=options)
+
+# IMDb reviews URL (e.g. Avatar 1-star reviews)
+url = "https://www.imdb.com/title/tt0499549/reviews/?ref_=tt_ururv_sm&sort=featured%2Casc&rating=1"
+
+print(f"🎬 Scraping reviews for: {MANUAL_TITLE}")
+print(f"⭐ Using manual rating: {MANUAL_RATING}")
+print(f"🔗 URL: {url}\n")
+
+driver.get(url)
+
+try:
+    WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.CSS_SELECTOR, "article.user-review-item"))
+    )
+    print("✅ Reviews loaded.")
+except:
+    print("❌ Timed out loading reviews.")
+    driver.save_screenshot("debug_timeout.png")
+    driver.quit()
+    exit()
+
+# Expand all spoiler buttons first
+spoiler_buttons = driver.find_elements(By.CLASS_NAME, "review-spoiler-button")
+for btn in spoiler_buttons:
+    try:
+        driver.execute_script("arguments[0].click();", btn)
+        time.sleep(0.5)
+    except Exception as e:
+        print(f"⚠️ Could not click spoiler button: {e}")
+        continue
+
+# Get all review articles
+reviews = driver.find_elements(By.CSS_SELECTOR, "article.user-review-item")
+print(f"🧾 Found {len(reviews)} reviews.\n")
+
+# List to store all review data
+review_data = []
+
+for review in reviews:
+    try:
+        # Optional: Get review title if available (this is the review's own title, not the movie title)
+        try:
+            review_title_elem = review.find_element(By.CSS_SELECTOR, '[data-testid="review-summary"] h3')
+            review_title = review_title_elem.text.strip()
+        except:
+            review_title = "[No review title]"
+
+        # Get the full text content from the visible div
+        content_elem = review.find_element(By.CSS_SELECTOR, 'div.ipc-html-content-inner-div[role="presentation"]')
+        content = content_elem.text.strip()
+
+        # Create review dictionary for CSV
+        review_dict = {
+            'title': MANUAL_TITLE,
+            'comment': content,
+            'rating': MANUAL_RATING
+        }
+        
+        # Add to our data list
+        review_data.append(review_dict)
+
+        # Print to screen (as before)
+        print(f"Movie Title: {MANUAL_TITLE}")
+        print(f"Review Title: {review_title}")
+        print(f"Rating: {MANUAL_RATING}")
+        print(f"Content: {content}\n{'-'*50}")
+        
+    except Exception as e:
+        print(f"⚠️ Skipping a review due to error: {e}")
+        continue
+
+# Save all reviews to CSV
+if review_data:
+    save_to_csv(review_data)
+    print(f"\n📊 Total reviews processed: {len(review_data)}")
+else:
+    print("❌ No reviews were successfully extracted.")
+
+driver.quit()

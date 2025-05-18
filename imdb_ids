@@ -1,0 +1,35 @@
+#IMDB
+titles = {
+ 'Aquaman': 'tt1477834',
+ 'Avatar': 'tt0499549',
+ 'Avatar: The Way of Water': 'tt1630029',
+ 'Avengers: Age of Ultron': 'tt2395427',
+ 'Avengers: Endgame': 'tt4154796',
+ 'Avengers: Infinity War': 'tt4154756',
+ 'Everything Everywhere All at Once': 'tt6710474',
+ 'Fast & Furious Presents: Hobbs & Shaw': 'tt6806448',
+ 'Furious 7': 'tt2820852',
+ 'Jurassic World': 'tt0369610',
+ 'Jurassic World: Fallen Kingdom': 'tt4881806',
+ 'Ready Player One': 'tt1677720',
+ 'Spider-Man: Far From Home': 'tt6320628',
+ 'The Fate of the Furious': 'tt4630562',
+ 'Transformers: Age of Extinction': 'tt2109248',
+ 'Transformers: The Last Knight': 'tt3371366',
+ 'Venom': 'tt1270797',
+ 'Warcraft': 'tt0803096',
+ 'Zootopia': 'tt2948356'
+}
+
+#DouBan
+titles = {'Avatar': '1652587', 
+          'Avatar: The Way of Water': '4811774', 
+          'Jurassic World: Fallen Kingdom': '26416062', 
+          'Transformers: The Last Knight': '25824686', 
+          'Zootopia': '25662329', 
+          'Warcraft': '2131940', 
+          'Avengers: Age of Ultron': '10741834', 
+          'Fast & Furious Presents: Hobbs & Shaw': '27163278', 
+          'Jurassic World': '10440138', 
+          'Spider-Man: Far From Home': '26931786', 
+          'Ready Player One': '4920389'}

@@ -2,7 +2,8 @@ import pandas as pd
 import os
 
 # Path to the folder containing CSV files
-folder_path = 'output'
+folder_path = 'douban_output'
+# folder_path = 'imdb_output'
 
 # Get a list of all CSV files in the folder
 csv_files = [file for file in os.listdir(folder_path) if file.endswith('.csv')]
