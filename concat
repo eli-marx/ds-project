@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 # Path to the folder containing CSV files
-folder_path = 'output1'
+folder_path = 'imdb_output'
 # folder_path = 'imdb_output'
 
 # Get a list of all CSV files in the folder
@@ -13,4 +13,4 @@ df_list = [pd.read_csv(os.path.join(folder_path, file)) for file in csv_files]
 combined_df = pd.concat(df_list, ignore_index=True)
 
 # Save to a new CSV file (optional)
-combined_df.to_csv('combined_output.csv', index=False)
+combined_df.to_csv('imdb_reviews.csv', index=False)
