@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 import csv
+import os
 from datetime import datetime
 
 def save_to_csv(reviews, filename=None):
@@ -30,6 +31,38 @@ def save_to_csv(reviews, filename=None):
     except Exception as e:
         print(f"❌ Error saving to CSV: {e}")
 
+def save_movie_csv(reviews, movie_title, output_folder="imdb_output"):
+    """Save reviews for a specific movie to individual CSV file in output folder"""
+    if not reviews:
+        print(f"❌ No reviews to save for {movie_title}")
+        return None
+    
+    # Create output folder if it doesn't exist
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+        print(f"📁 Created output folder: {output_folder}")
+    
+    # Create safe filename
+    safe_title = movie_title.replace(" ", "_").replace(":", "").replace("/", "_").replace("'", "")
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    filename = f"{safe_title}_reviews_{timestamp}.csv"
+    filepath = os.path.join(output_folder, filename)
+    
+    try:
+        with open(filepath, 'w', newline='', encoding='utf-8-sig') as csvfile:
+            fieldnames = ['title', 'comment', 'rating']
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            
+            writer.writeheader()
+            for review in reviews:
+                writer.writerow(review)
+        
+        print(f"💾 Saved {len(reviews)} reviews for '{movie_title}' to {filepath}")
+        return filepath
+    except Exception as e:
+        print(f"❌ Error saving movie CSV for {movie_title}: {e}")
+        return None
+
 def scrape_reviews_for_rating(driver, rating, MOVIE_ID, MANUAL_TITLE):
     """Scrape reviews for a specific rating"""
     url = f"https://www.imdb.com/title/{MOVIE_ID}/reviews/?ref_=tt_ururv_sm&sort=featured%2Casc&rating={rating}"
@@ -51,6 +84,30 @@ def scrape_reviews_for_rating(driver, rating, MOVIE_ID, MANUAL_TITLE):
         print("❌ Timed out loading reviews.")
         driver.save_screenshot(f"debug_timeout_rating_{rating}.png")
         return []
+
+    # Look for and click the "25 more" button to load additional reviews
+    try:
+        more_button = driver.find_element(By.XPATH, "//span[@class='ipc-see-more__text' and text()='25 more']")
+        if more_button:
+            print("🔍 Found '25 more' button, clicking to load additional reviews...")
+            driver.execute_script("arguments[0].click();", more_button)
+            
+            # Wait a moment for the new reviews to load
+            time.sleep(3)
+            
+            # Wait for additional reviews to be present
+            try:
+                WebDriverWait(driver, 10).until(
+                    lambda driver: len(driver.find_elements(By.CSS_SELECTOR, "article.user-review-item")) > 25
+                )
+                print("✅ Additional reviews loaded successfully.")
+            except:
+                print("⚠️ Additional reviews may not have loaded, continuing anyway...")
+        else:
+            print("ℹ️  No '25 more' button found, proceeding with available reviews.")
+    except Exception as e:
+        print(f"ℹ️  No '25 more' button found or error clicking it: {e}")
+        print("📋 Proceeding with currently loaded reviews...")
 
     # Expand all spoiler buttons first
     spoiler_buttons = driver.find_elements(By.CLASS_NAME, "review-spoiler-button")
@@ -114,35 +171,102 @@ def main():
 
     # MANUAL SETTINGS - Change these values as needed
     titles = {
-    'Aquaman': 'tt1477834',
+    'The Shawshank Redemption': 'tt0111161',
+    'Titanic': 'tt0120338',
+    'Forrest Gump': 'tt0109830',
+    'Spirited Away': 'tt0245429',
+    'Life Is Beautiful': 'tt0118799',
+    'Léon: The Professional': 'tt0110413',
+    'Interstellar': 'tt0816692',
+    'Inception': 'tt1375666',
+    'The Truman Show': 'tt0120382',
+    "Schindler's List": 'tt0108052',
+    'WALL·E': 'tt0910970',
+    'The Intouchables': 'tt1675434',
+    'The Godfather': 'tt0068646',
+    'Coco': 'tt2380307',
+    "Harry Potter and the Sorcerer's Stone": 'tt0241527',
+    'The Dark Knight': 'tt0468569',
+    'The Lord of the Rings: The Return of the King': 'tt0167260',
+    'Up': 'tt1049413',
+    '12 Angry Men': 'tt0050083',
+    'Catch Me If You Can': 'tt0264464',
+    'Life of Pi': 'tt0454876',
+    'The Pianist': 'tt0253474',
+    'Green Book': 'tt6966692',
+    'The Matrix': 'tt0133093',
+    'The Lion King': 'tt0110357',
+    'Fight Club': 'tt0137523',
+    'The Curious Case of Benjamin Button': 'tt0421715',
+    'A Beautiful Mind': 'tt0268978',
+    'Lock, Stock and Two Smoking Barrels': 'tt0120735',
     'Avatar': 'tt0499549',
-    'Avatar: The Way of Water': 'tt1630029',
-    'Avengers: Age of Ultron': 'tt2395427',
-    'Avengers: Endgame': 'tt4154796',
-    'Avengers: Infinity War': 'tt4154756',
-    'Everything Everywhere All at Once': 'tt6710474',
-    'Fast & Furious Presents: Hobbs & Shaw': 'tt6806448',
-    'Furious 7': 'tt2820852',
-    'Jurassic World': 'tt0369610',
-    'Jurassic World: Fallen Kingdom': 'tt4881806',
-    'Ready Player One': 'tt1677720',
-    'Spider-Man: Far From Home': 'tt6320628',
-    'The Fate of the Furious': 'tt4630562',
-    'Transformers: Age of Extinction': 'tt2109248',
-    'Transformers: The Last Knight': 'tt3371366',
-    'Venom': 'tt1270797',
-    'Warcraft': 'tt0803096',
-    'Zootopia': 'tt2948356'
+    'Saving Private Ryan': 'tt0120815',
+    'The Silence of the Lambs': 'tt0102926',
+    "One Flew Over the Cuckoo's Nest": 'tt0073486',
+    'The Grand Budapest Hotel': 'tt2278388',
+    'Shutter Island': 'tt1130884',
+    'The Prestige': 'tt0482571',
+    'Good Will Hunting': 'tt0119217',
+    'Pulp Fiction': 'tt0110912',
+    'Pirates of the Caribbean: The Curse of the Black Pearl': 'tt0325980',
+    'Se7en': 'tt0114369',
+    'Parasite': 'tt6751668',
+    'The Sixth Sense': 'tt0167404',
+    'Inside Out': 'tt2096673',
+    'Gone Girl': 'tt2267998',
+    'How to Train Your Dragon': 'tt0892769',
+    'Monsters, Inc.': 'tt0198781',
+    'Toy Story 3': 'tt0435761',
+    'Django Unchained': 'tt1853728',
+    'The Imitation Game': 'tt2084970',
+    'Psycho': 'tt0054215',
+    'Hacksaw Ridge': 'tt2119532',
+    'Joker': 'tt7286456',
+    'The Bourne Ultimatum': 'tt0440963',
+    'The Green Mile': 'tt0120689',
+    '2001: A Space Odyssey': 'tt0062622',
+    'Memento': 'tt0209144',
+    'Slumdog Millionaire': 'tt1010048',
+    'Mad Max: Fury Road': 'tt1392190',
+    'Whiplash': 'tt2582802',
+    'Bohemian Rhapsody': 'tt1727824',
+    'Black Swan': 'tt0947798',
+    'La La Land': 'tt3783958',
+    'Terminator 2: Judgment Day': 'tt0103064',
+    'Inglourious Basterds': 'tt0361748',
+    'The Notebook': 'tt0332280',
+    'The Martian': 'tt3659388',
+    'Spider-Man: Into the Spider-Verse': 'tt4633694',
+    'Frozen': 'tt2294629'
     }
 
-    # Main scraping loop - iterate through ratings 1 to 4
+    dif = ['Whiplash',
+ 'Bohemian Rhapsody',
+ 'Black Swan',
+ 'La La Land',
+ 'Terminator 2: Judgment Day',
+ 'Inglourious Basterds',
+ 'The Notebook',
+ 'The Martian',
+ 'Spider-Man: Into the Spider-Verse',
+ 'Frozen']
+
+    titles = {key: titles[key] for key in dif if key in titles}
+
+
+    # Main scraping loop
     all_reviews = []
     total_reviews_count = 0
+    processed_movies = []
 
     for MANUAL_TITLE in titles.keys():
         ID = titles[MANUAL_TITLE]
-        print(f"🚀 Starting scrape for {MANUAL_TITLE}, id: {ID}")
+        print(f"\n🚀 Starting scrape for {MANUAL_TITLE}, id: {ID}")
         print(f"📊 Will scrape ratings 1 through 4...")
+        
+        movie_reviews = []  # Store reviews for this specific movie
+        
         try:
             for rating in range(1, 5):  # This will loop through 1, 2, 3, 4
                 MANUAL_RATING = str(rating)
@@ -150,9 +274,10 @@ def main():
                 # Scrape reviews for this rating
                 review_data = scrape_reviews_for_rating(driver, rating, ID, MANUAL_TITLE)
                 
-                # Add reviews to the master list
+                # Add reviews to both master list and movie-specific list
                 if review_data:
                     all_reviews.extend(review_data)
+                    movie_reviews.extend(review_data)
                     total_reviews_count += len(review_data)
                     print(f"📋 Processed {len(review_data)} reviews for {rating}-star rating")
                 else:
@@ -162,20 +287,51 @@ def main():
                 if rating < 4:  # Don't wait after the last iteration
                     print(f"⏳ Waiting 3 seconds before next rating...")
                     time.sleep(3)
-        finally:
-            print("finished a thing")
+            
+            # Save individual movie CSV after completing all ratings for this movie
+            if movie_reviews:
+                saved_path = save_movie_csv(movie_reviews, MANUAL_TITLE)
+                if saved_path:
+                    processed_movies.append({
+                        'title': MANUAL_TITLE,
+                        'reviews_count': len(movie_reviews),
+                        'file_path': saved_path
+                    })
+                    print(f"✅ Completed {MANUAL_TITLE}: {len(movie_reviews)} total reviews")
+                else:
+                    print(f"⚠️ Failed to save CSV for {MANUAL_TITLE}")
+            else:
+                print(f"❌ No reviews found for {MANUAL_TITLE}")
+                
+        except Exception as e:
+            print(f"❌ Error processing {MANUAL_TITLE}: {e}")
+            # Save what we have for this movie even if there was an error
+            if movie_reviews:
+                save_movie_csv(movie_reviews, MANUAL_TITLE)
         
+        print(f"🏁 Finished processing {MANUAL_TITLE}")
+        print(f"⏳ Waiting 5 seconds before next movie...")
+        time.sleep(5)
 
     # Summary
     print(f"\n{'🎉 SCRAPING COMPLETE 🎉':^60}")
     print(f"📊 Total reviews scraped: {total_reviews_count}")
+    print(f"🎬 Movies processed: {len(processed_movies)}")
+    print(f"📁 Individual CSV files saved in 'imdb_output' folder")
     print(f"📁 Ratings scraped: 1, 2, 3, 4 stars")
-    print(f"💾 All reviews will be saved to one combined CSV file")
 
-    # Save all reviews to one combined file
+    # Print summary of processed movies
+    if processed_movies:
+        print(f"\n📋 PROCESSED MOVIES SUMMARY:")
+        print(f"{'Movie Title':<50} {'Reviews':<10} {'Status'}")
+        print("="*70)
+        for movie in processed_movies:
+            print(f"{movie['title']:<50} {movie['reviews_count']:<10} {'✅ Saved'}")
+
+    # Save all reviews to one combined file (keep original functionality)
     if all_reviews:
-        safe_title = MANUAL_TITLE.replace(" ", "_").replace(":", "").replace("/", "_")
-        combined_filename = f"{safe_title}_ALL_RATINGS_reviews_.csv"
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        combined_filename = f"ALL_MOVIES_REVIEWS_{timestamp}.csv"
         
         try:
             with open(combined_filename, 'w', newline='', encoding='utf-8-sig') as csvfile:
@@ -184,13 +340,12 @@ def main():
                 writer.writeheader()
                 for review in all_reviews:
                     writer.writerow(review)
-            print(f"✅ All reviews saved to {combined_filename}")
+            print(f"✅ All reviews also saved to combined file: {combined_filename}")
         except Exception as e:
             print(f"❌ Error saving combined file: {e}")
     else:
         print("❌ No reviews to save.")
 
-     
     # Close the browser
     driver.quit()
 
