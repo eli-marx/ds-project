@@ -1,0 +1,80 @@
+screenplay
+screenplays
+movie
+like
+just
+watch
+really
+movies
+film
+films
+<MOVIE_TITLE>
+Se7en
+Catch Me If You Can
+The Matrix
+Saving Private Ryan
+Inside Out
+Spirited Away
+Inception
+The Imitation Game
+Black Swan
+The Prestige
+Gone Girl
+WALL·E
+Slumdog Millionaire
+Life Is Beautiful
+Inglourious Basterds
+La La Land
+Whiplash
+Terminator 2: Judgment Day
+Shutter Island
+The Shawshank Redemption
+12 Angry Men
+Spider-Man: Into the Spider-Verse
+Coco
+Léon: The Professional
+The Silence of the Lambs
+Schindler's List
+Green Book
+Hacksaw Ridge
+The Intouchables
+Lock, Stock and Two Smoking Barrels
+Pulp Fiction
+Joker
+The Grand Budapest Hotel
+Pirates of the Caribbean: The Curse of the Black Pearl
+The Godfather
+Interstellar
+Psycho
+Toy Story 3
+The Curious Case of Benjamin Button
+Memento
+The Green Mile
+Forrest Gump
+Frozen
+Up
+Avatar
+Monsters, Inc.
+One Flew Over the Cuckoo's Nest
+Harry Potter and the Sorcerer's Stone
+Parasite
+Life of Pi
+The Truman Show
+The Martian
+The Sixth Sense
+The Lord of the Rings: The Return of the King
+Good Will Hunting
+2001: A Space Odyssey
+A Beautiful Mind
+Fight Club
+Mad Max: Fury Road
+The Notebook
+The Bourne Ultimatum
+The Lion King
+The Pianist
+The Dark Knight
+Titanic
+How to Train Your Dragon
+Bohemian Rhapsody
+Django Unchained
+
