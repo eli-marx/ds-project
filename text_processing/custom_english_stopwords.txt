@@ -1,5 +1,11 @@
 screenplay
 screenplays
+think
+know
+make
+way
+watch
+watching
 movie
 like
 just
@@ -8,73 +14,74 @@ really
 movies
 film
 films
+time
 <MOVIE_TITLE>
-Se7en
-Catch Me If You Can
-The Matrix
-Saving Private Ryan
-Inside Out
-Spirited Away
-Inception
-The Imitation Game
-Black Swan
-The Prestige
-Gone Girl
-WALL·E
-Slumdog Millionaire
-Life Is Beautiful
-Inglourious Basterds
-La La Land
-Whiplash
-Terminator 2: Judgment Day
-Shutter Island
-The Shawshank Redemption
-12 Angry Men
-Spider-Man: Into the Spider-Verse
-Coco
-Léon: The Professional
-The Silence of the Lambs
-Schindler's List
-Green Book
-Hacksaw Ridge
-The Intouchables
-Lock, Stock and Two Smoking Barrels
-Pulp Fiction
-Joker
-The Grand Budapest Hotel
-Pirates of the Caribbean: The Curse of the Black Pearl
-The Godfather
-Interstellar
-Psycho
-Toy Story 3
-The Curious Case of Benjamin Button
-Memento
-The Green Mile
-Forrest Gump
-Frozen
-Up
-Avatar
-Monsters, Inc.
-One Flew Over the Cuckoo's Nest
-Harry Potter and the Sorcerer's Stone
-Parasite
-Life of Pi
-The Truman Show
-The Martian
-The Sixth Sense
-The Lord of the Rings: The Return of the King
-Good Will Hunting
-2001: A Space Odyssey
-A Beautiful Mind
-Fight Club
-Mad Max: Fury Road
-The Notebook
-The Bourne Ultimatum
-The Lion King
-The Pianist
-The Dark Knight
-Titanic
-How to Train Your Dragon
-Bohemian Rhapsody
-Django Unchained
+se7en
+catch me if you can
+the matrix
+saving private ryan
+inside out
+spirited away
+inception
+the imitation game
+black swan
+the prestige
+gone girl
+wall·e
+slumdog millionaire
+life is beautiful
+inglourious basterds
+la la land
+whiplash
+terminator 2: judgment day
+shutter island
+the shawshank redemption
+12 angry men
+spider-man: into the spider-verse
+coco
+léon: the professional
+the silence of the lambs
+schindler's list
+green book
+hacksaw ridge
+the intouchables
+lock, stock and two smoking barrels
+pulp fiction
+joker
+the grand budapest hotel
+pirates of the caribbean: the curse of the black pearl
+the godfather
+interstellar
+psycho
+toy story 3
+the curious case of benjamin button
+memento
+the green mile
+forrest gump
+frozen
+up
+avatar
+monsters, inc.
+one flew over the cuckoo's nest
+harry potter and the sorcerer's stone
+parasite
+life of pi
+the truman show
+the martian
+the sixth sense
+the lord of the rings: the return of the king
+good will hunting
+2001: a space odyssey
+a beautiful mind
+fight club
+mad max: fury road
+the notebook
+the bourne ultimatum
+the lion king
+the pianist
+the dark knight
+titanic
+how to train your dragon
+bohemian rhapsody
+django unchained
 
