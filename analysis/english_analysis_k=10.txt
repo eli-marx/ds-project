@@ -1,0 +1,841 @@
+====== CLAUDE SUMMARY ======
+
+Analysis of IMDB Negative Review Clusters
+Overview
+This unsupervised clustering of negative IMDB reviews reveals 10 distinct patterns of criticism, each representing different viewer perspectives, writing styles, and complaint types. The clusters range from detailed analytical critiques to brief dismissive comments.
+
+Cluster Profiles
+Cluster 0: Performance-Focused Reviews
+Size: 754 reviews | Avg Rating: 2.35 | Length: 49 words
+Key Features: Heavy focus on acting quality and star performances
+Top Movies: Bohemian Rhapsody, La La Land, Joker
+Signature Elements:
+Highest actor name mentions (1.00 per review)
+Keywords: "actor_name performance", "great movie", "story line"
+Theme focus: Acting/Performance dominates (2.91 mentions/review)
+Interpretation: These are casual viewers who judge movies primarily through star power and acting quality. They're drawn to mainstream, Oscar-bait films but often disappointed by execution despite strong performances.
+
+Cluster 1: Intellectual Sci-Fi Critics
+Size: 702 reviews | Avg Rating: 2.41 | Length: 104 words
+Key Features: Sophisticated vocabulary, thematic analysis
+Top Movies: Interstellar, 2001: A Space Odyssey, The Matrix
+Signature Elements:
+Keywords: "science fiction", "black hole", "alan turing"
+Complex literary analysis approach
+Focus on plot coherence and thematic depth
+Interpretation: These are cinephiles and sci-fi enthusiasts who appreciate complex narratives but become frustrated when ambitious films don't deliver on their conceptual promises. They write detailed, thoughtful critiques.
+
+Cluster 2: War Film Connoisseurs
+Size: 369 reviews | Avg Rating: 2.47 | Length: 90 words
+Key Features: Genre expertise, historical accuracy focus
+Top Movies: Saving Private Ryan, Life Is Beautiful, Inglourious Basterds
+Signature Elements:
+Spielberg dominance (0.76 director mentions/review)
+Keywords: "war movie", "world war ii", "concentration camps"
+High director awareness and genre knowledge
+Interpretation: War film aficionados who have deep knowledge of the genre and strong opinions about historical representation. They're particularly critical of "Hollywoodization" and historical liberties.
+
+Cluster 3: Harsh Dismissive Critics
+Size: 608 reviews | Avg Rating: 2.05 (lowest) | Length: 22 words
+Key Features: Extremely brief, brutally negative
+Top Movies: The Shawshank Redemption, Parasite, Bohemian Rhapsody
+Signature Elements:
+Signature phrase: "worst movie year sucks much got prolapse"
+Minimal engagement with film elements
+Lowest average rating and shortest reviews
+Interpretation: These appear to be either trolls or viewers with extremely low tolerance who abandon movies quickly. The repetitive phrases suggest possible bot activity or copy-paste behavior.
+
+Cluster 4: Character & Plot Analysts
+Size: 943 reviews | Avg Rating: 2.48 | Length: 80 words
+Key Features: Focus on narrative structure and character development
+Top Movies: Gone Girl, Shutter Island, The Notebook
+Signature Elements:
+Keywords: "scenes battle", balanced actor/director mentions
+Strong focus on plot and character analysis
+Preference for thrillers and psychological dramas
+Interpretation: Viewers who appreciate complex narratives and character studies. They're disappointed when sophisticated films fail to deliver coherent plotting or believable character development.
+
+Cluster 5: Boredom Complainers
+Size: 545 reviews | Avg Rating: 2.15 | Length: 26 words
+Key Features: Complaints about pacing and entertainment value
+Top Movies: Joker, 2001: A Space Odyssey, Gone Girl
+Signature Elements:
+Keywords: "boring movie", "30 minutes", "hours life"
+Focus on time and pacing issues
+Brief, impatient reviews
+Interpretation: Casual viewers seeking entertainment who lack patience for slow-burn or art house films. They often abandon movies early and focus primarily on pacing complaints.
+
+Cluster 6: Detailed Analytical Reviews
+Size: 963 reviews | Avg Rating: 2.49 | Length: 160 words (longest)
+Key Features: Comprehensive, essay-like critiques
+Top Movies: La La Land, Inglourious Basterds, Benjamin Button
+Signature Elements:
+Highest actor mentions (1.62/review) and director awareness
+Most detailed thematic analysis
+Keywords: "feels like", "look like"
+Interpretation: Serious film critics and cinephiles who write detailed, analytical reviews. Despite negative ratings, they engage deeply with films and provide substantive criticism covering multiple aspects.
+
+Cluster 7: Animation & Family Film Critics
+Size: 507 reviews | Avg Rating: 2.43 | Length: 90 words
+Key Features: Focus on animated and family content
+Top Movies: Frozen, Inside Out, WALL·E, Up
+Signature Elements:
+Keywords: "disney pixar", "toy story", "animated film"
+Character-focused criticism
+Family film expectations
+Interpretation: Viewers of animated films who judge based on character development, emotional resonance, and family appeal. They have specific expectations for Disney/Pixar quality.
+
+Cluster 8: Technical & Genre Critics
+Size: 1,063 reviews | Avg Rating: 2.41 | Length: 52 words
+Key Features: Focus on technical aspects and genre conventions
+Top Movies: The Dark Knight, Avatar, The Matrix
+Signature Elements:
+Keywords: "action scenes", "visual effects", "fell asleep"
+Emphasis on entertainment value and technical execution
+Interpretation: Mainstream audiences focused on spectacle and entertainment value. They judge films primarily on technical merit and genre satisfaction rather than artistic achievement.
+
+Cluster 9: Prestige Film Critics
+Size: 1,253 reviews (largest) | Avg Rating: 2.41 | Length: 91 words
+Key Features: Focus on acclaimed, high-profile films
+Top Movies: Avatar, Titanic, LOTR: Return of the King
+Signature Elements:
+Keywords: "top 250", "visual effects", "mad max"
+High director and actor awareness
+Critical of overhyped blockbusters
+Interpretation: The largest cluster represents viewers who specifically target highly-rated or acclaimed films but find them disappointing. They're backlash critics who challenge popular consensus.
+
+Key Insights
+Writing Style Patterns
+Length Distribution: Ranges from 22 words (dismissive) to 160 words (analytical)
+Engagement Levels: Clear correlation between review length and analytical depth
+Authority Indicators: Director/actor name usage varies dramatically by cluster
+Genre Preferences & Expectations
+Different clusters gravitate toward specific genres (war films, sci-fi, animation)
+Genre expertise correlates with more detailed criticism
+Mainstream vs. niche preferences create distinct criticism patterns
+Criticism Types
+Technical Critics: Focus on cinematography, effects, pacing
+Narrative Critics: Emphasize plot, character development, themes
+Performance Critics: Judge primarily on acting quality
+Authenticity Critics: Concerned with historical accuracy, realism
+Entertainment Critics: Want immediate gratification and pacing
+The "Prestige Backlash" Phenomenon
+Clusters 3 and 9 specifically target highly-rated films (Shawshank Redemption, LOTR, Avatar), suggesting a pattern of contrarian criticism against popular consensus.
+
+Implications for Understanding Film Criticism
+This clustering reveals that negative film criticism isn't monolithic but follows predictable patterns based on:
+
+Viewer expertise level (casual vs. cinephile)
+Genre preferences and expectations
+Primary evaluation criteria (entertainment vs. artistry)
+Writing engagement level (dismissive vs. analytical)
+Target film types (mainstream vs. prestige vs. genre-specific)
+The model successfully identified distinct "types" of movie critics, each with characteristic vocabularies, concerns, and approaches to negative evaluation.
+
+
+=== KEYBERT KEYWORDS ===
+
+Cluster 0 keywords: [('scenes', 0.4342), ('scripts', 0.4056), ('screenwriters', 0.4032), ('critics', 0.3971), ('tarantino', 0.3918), ('blackkklansman', 0.3906), ('script', 0.3872), ('biopics', 0.3846), ('departed', 0.3833), ('directed', 0.3785)]
+Cluster 1 keywords: [('tropes', 0.4462), ('portrayals', 0.4205), ('literary', 0.4158), ('rehashes', 0.4142), ('literature', 0.4127), ('anachronisms', 0.4071), ('intros', 0.4024), ('thematic', 0.3937), ('comedies', 0.3894), ('writers', 0.3872)]
+Cluster 2 keywords: [('spielberg', 0.4742), ('cinematogophry', 0.4676), ('hollywoodization', 0.458), ('filmography', 0.453), ('comedies', 0.4401), ('memoirs', 0.4378), ('moviemakers', 0.4345), ('filmmakers', 0.4249), ('warfilm', 0.4231), ('biopic', 0.4211)]
+Cluster 3 keywords: [('mediocrity', 0.4183), ('opinion', 0.3688), ('worstest', 0.3546), ('opinions', 0.3531), ('worst', 0.3492), ('comedy', 0.3411), ('cliches', 0.3345), ('clichés', 0.3345), ('ratings', 0.3326), ('mediocre', 0.3296)]
+Cluster 4 keywords: [('thrillers', 0.4878), ('comedies', 0.4652), ('tropes', 0.4388), ('dramas', 0.4355), ('screenwriting', 0.4313), ('spielbergisms', 0.4284), ('hollywoodisms', 0.4256), ('dramatisation', 0.4216), ('screenwriters', 0.4147), ('dramatized', 0.414)]
+Cluster 5 keywords: [('thrillers', 0.4347), ('letdowns', 0.4102), ('comedies', 0.4099), ('scenes', 0.4026), ('dramas', 0.4007), ('storylines', 0.385), ('thriller', 0.3834), ('endings', 0.3831), ('mediocrity', 0.3753), ('synopsis', 0.3743)]
+Cluster 6 keywords: [('tarantinoloveofgunsandshootingthingsisreallycool', 0.445), ('hollywoodized', 0.441), ('comedies', 0.4289), ('hollywoodised', 0.423), ('critics', 0.4167), ('screenwriting', 0.4), ('screenwriters', 0.3962), ('cinephiles', 0.3955), ('review_silence_of_the_lambs', 0.3953), ('masterpieces', 0.3882)]
+Cluster 7 keywords: [('cartoons', 0.396), ('cartoonesque', 0.377), ('cartoonish', 0.3692), ('ideas', 0.3659), ('cartoony', 0.3657), ('pixar', 0.3546), ('pixars', 0.3542), ('dialogues', 0.3539), ('sentiment', 0.3523), ('comedy', 0.352)]
+Cluster 8 keywords: [('critics', 0.4455), ('worstfilm', 0.4302), ('thrillers', 0.429), ('opinions', 0.4091), ('brokeback', 0.4072), ('thriller', 0.406), ('rating', 0.4048), ('ratings', 0.4031), ('reviews', 0.4016), ('sequels', 0.3969)]
+Cluster 9 keywords: [('comedies', 0.4798), ('cinematograpthy', 0.4379), ('filmgoing', 0.4337), ('thrillers', 0.4223), ('portrayals', 0.4222), ('hollywood', 0.4137), ('filmgoers', 0.4136), ('critics', 0.4133), ('tropes', 0.4068), ('cinema', 0.4054)]
+
+=== TF-IDF DISCRIMINATIVE TERMS ===
+
+Cluster 0 - Most Discriminative Terms:
+  actor_name: 0.714
+  best: 0.199
+  people: 0.195
+  great: 0.182
+  acting: 0.152
+  better: 0.142
+  bad: 0.125
+  music: 0.123
+  say: 0.123
+  character: 0.121
+
+Cluster 1 - Most Discriminative Terms:
+  people: 0.478
+  world: 0.199
+  end: 0.163
+  character: 0.155
+  real: 0.155
+  plot: 0.153
+  say: 0.149
+  love: 0.147
+  thing: 0.141
+  man: 0.140
+
+Cluster 2 - Most Discriminative Terms:
+  war: 0.533
+  director_name: 0.377
+  people: 0.276
+  actor_name: 0.245
+  scene: 0.166
+  great: 0.150
+  bad: 0.134
+  real: 0.117
+  scenes: 0.115
+  characters: 0.114
+
+Cluster 3 - Most Discriminative Terms:
+  people: 0.547
+  got: 0.230
+  say: 0.227
+  worst: 0.212
+  bad: 0.209
+  thing: 0.173
+  better: 0.162
+  waste: 0.158
+  understand: 0.144
+  going: 0.137
+
+Cluster 4 - Most Discriminative Terms:
+  actor_name: 0.373
+  people: 0.248
+  plot: 0.240
+  character: 0.230
+  end: 0.227
+  characters: 0.199
+  love: 0.181
+  going: 0.151
+  scene: 0.143
+  ending: 0.138
+
+Cluster 5 - Most Discriminative Terms:
+  boring: 0.587
+  minutes: 0.222
+  people: 0.215
+  plot: 0.213
+  hours: 0.194
+  bad: 0.173
+  long: 0.167
+  end: 0.144
+  watched: 0.137
+  ending: 0.131
+
+Cluster 6 - Most Discriminative Terms:
+  actor_name: 0.520
+  director_name: 0.268
+  people: 0.246
+  character: 0.197
+  characters: 0.166
+  bad: 0.153
+  plot: 0.148
+  great: 0.131
+  scene: 0.128
+  end: 0.122
+
+Cluster 7 - Most Discriminative Terms:
+  characters: 0.384
+  people: 0.234
+  plot: 0.219
+  character: 0.206
+  old: 0.189
+  little: 0.187
+  love: 0.182
+  better: 0.175
+  great: 0.151
+  boring: 0.146
+
+Cluster 8 - Most Discriminative Terms:
+  plot: 0.253
+  people: 0.248
+  actor_name: 0.246
+  bad: 0.240
+  great: 0.212
+  10: 0.196
+  boring: 0.196
+  acting: 0.193
+  better: 0.172
+  end: 0.156
+
+Cluster 9 - Most Discriminative Terms:
+  actor_name: 0.362
+  director_name: 0.343
+  people: 0.218
+  bad: 0.189
+  great: 0.188
+  plot: 0.183
+  best: 0.172
+  acting: 0.166
+  characters: 0.157
+  effects: 0.149
+
+
+=== MOVIE & RATING DISTRIBUTION ===
+
+Cluster 0:
+  Size: 754 reviews
+  Top movies:
+    - Bohemian Rhapsody: 91 reviews
+    - La La Land: 55 reviews
+    - Joker: 37 reviews
+    - A Beautiful Mind: 33 reviews
+    - Forrest Gump: 31 reviews
+  Average rating: 2.35
+  Rating std: 1.18
+
+Cluster 1:
+  Size: 702 reviews
+  Top movies:
+    - Interstellar: 56 reviews
+    - 2001: A Space Odyssey: 36 reviews
+    - The Matrix: 34 reviews
+    - The Imitation Game: 29 reviews
+    - Fight Club: 28 reviews
+  Average rating: 2.41
+  Rating std: 1.16
+
+Cluster 2:
+  Size: 369 reviews
+  Top movies:
+    - Saving Private Ryan: 96 reviews
+    - Life Is Beautiful: 57 reviews
+    - Inglourious Basterds: 57 reviews
+    - Schindler's List: 42 reviews
+    - Hacksaw Ridge: 39 reviews
+  Average rating: 2.47
+  Rating std: 1.17
+
+Cluster 3:
+  Size: 608 reviews
+  Top movies:
+    - The Shawshank Redemption: 49 reviews
+    - Parasite: 30 reviews
+    - Bohemian Rhapsody: 29 reviews
+    - Joker: 26 reviews
+    - Whiplash: 25 reviews
+  Average rating: 2.05
+  Rating std: 1.16
+
+Cluster 4:
+  Size: 943 reviews
+  Top movies:
+    - Gone Girl: 71 reviews
+    - Shutter Island: 50 reviews
+    - The Notebook: 50 reviews
+    - The Prestige: 42 reviews
+    - Fight Club: 40 reviews
+  Average rating: 2.48
+  Rating std: 1.13
+
+Cluster 5:
+  Size: 545 reviews
+  Top movies:
+    - Joker: 39 reviews
+    - 2001: A Space Odyssey: 38 reviews
+    - Gone Girl: 22 reviews
+    - La La Land: 22 reviews
+    - Inception: 20 reviews
+  Average rating: 2.15
+  Rating std: 1.15
+
+Cluster 6:
+  Size: 963 reviews
+  Top movies:
+    - La La Land: 40 reviews
+    - Inglourious Basterds: 37 reviews
+    - The Curious Case of Benjamin Button: 36 reviews
+    - Django Unchained: 35 reviews
+    - Black Swan: 34 reviews
+  Average rating: 2.49
+  Rating std: 1.13
+
+Cluster 7:
+  Size: 507 reviews
+  Top movies:
+    - Frozen: 93 reviews
+    - Inside Out: 72 reviews
+    - WALL·E: 53 reviews
+    - Up: 51 reviews
+    - Spirited Away: 39 reviews
+  Average rating: 2.43
+  Rating std: 1.16
+
+Cluster 8:
+  Size: 1063 reviews
+  Top movies:
+    - The Dark Knight: 47 reviews
+    - Avatar: 47 reviews
+    - The Matrix: 40 reviews
+    - Parasite: 37 reviews
+    - Inception: 37 reviews
+  Average rating: 2.41
+  Rating std: 1.19
+
+Cluster 9:
+  Size: 1253 reviews
+  Top movies:
+    - Avatar: 64 reviews
+    - Titanic: 58 reviews
+    - The Lord of the Rings: The Return of the King: 51 reviews
+    - Django Unchained: 47 reviews
+    - Inglourious Basterds: 46 reviews
+  Average rating: 2.41
+  Rating std: 1.16
+
+
+=== REVIEW LENGTH ANALYSIS ===
+
+Cluster 0:
+  Average length: 49.0 words
+  Median length: 42.5 words
+
+Cluster 1:
+  Average length: 103.6 words
+  Median length: 72.0 words
+
+Cluster 2:
+  Average length: 90.1 words
+  Median length: 69.0 words
+
+Cluster 3:
+  Average length: 21.5 words
+  Median length: 11.0 words
+
+Cluster 4:
+  Average length: 79.9 words
+  Median length: 63.0 words
+
+Cluster 5:
+  Average length: 25.5 words
+  Median length: 19.0 words
+
+Cluster 6:
+  Average length: 160.0 words
+  Median length: 134.0 words
+
+Cluster 7:
+  Average length: 90.0 words
+  Median length: 66.0 words
+
+Cluster 8:
+  Average length: 51.6 words
+  Median length: 47.0 words
+
+Cluster 9:
+  Average length: 91.2 words
+  Median length: 73.0 words
+
+
+=== SPECIAL TOKEN USAGE ===
+
+Cluster 0:
+  director_name: 101 total (0.13 per review)
+  actor_name: 755 total (1.00 per review)
+
+Cluster 1:
+  director_name: 82 total (0.12 per review)
+  actor_name: 132 total (0.19 per review)
+
+Cluster 2:
+  director_name: 281 total (0.76 per review)
+  actor_name: 183 total (0.50 per review)
+
+Cluster 3:
+  director_name: 7 total (0.01 per review)
+  actor_name: 9 total (0.01 per review)
+
+Cluster 4:
+  director_name: 190 total (0.20 per review)
+  actor_name: 599 total (0.64 per review)
+
+Cluster 5:
+  director_name: 9 total (0.02 per review)
+  actor_name: 26 total (0.05 per review)
+
+Cluster 6:
+  director_name: 804 total (0.83 per review)
+  actor_name: 1557 total (1.62 per review)
+
+Cluster 7:
+  director_name: 26 total (0.05 per review)
+  actor_name: 93 total (0.18 per review)
+
+Cluster 8:
+  director_name: 160 total (0.15 per review)
+  actor_name: 348 total (0.33 per review)
+
+Cluster 9:
+  director_name: 893 total (0.71 per review)
+  actor_name: 944 total (0.75 per review)
+
+
+=== UNIQUE N-GRAMS PER CLUSTER ===
+
+Cluster 0 - Unique/Distinctive N-grams:
+  - actor_name performance: 19 occurrences
+  - live aid: 23 occurrences
+  - freddie mercury: 45 occurrences
+  - movie actor_name: 23 occurrences
+  - actor_name good: 23 occurrences
+  - story line: 20 occurrences
+  - great movie: 20 occurrences
+
+Cluster 1 - Unique/Distinctive N-grams:
+  - alan turing: 28 occurrences
+  - end movie: 21 occurrences
+  - black hole: 32 occurrences
+  - science fiction: 38 occurrences
+
+Cluster 2 - Unique/Distinctive N-grams:
+  - war ii: 18 occurrences
+  - world war ii: 18 occurrences
+  - war movie: 54 occurrences
+  - war movies: 15 occurrences
+  - war film: 30 occurrences
+  - world war: 43 occurrences
+  - schindler list: 34 occurrences
+  - concentration camps: 18 occurrences
+  - subject matter: 16 occurrences
+  - war films: 18 occurrences
+
+Cluster 3 - Unique/Distinctive N-grams:
+  - movie year sucks: 25 occurrences
+  - sucks much got: 25 occurrences
+  - much got: 25 occurrences
+  - much got prolapse: 25 occurrences
+  - worst movie year: 26 occurrences
+  - watching worst movie: 24 occurrences
+  - year sucks much: 25 occurrences
+  - prolapse watching worst: 24 occurrences
+  - year sucks: 25 occurrences
+  - watching worst: 24 occurrences
+
+Cluster 4 - Unique/Distinctive N-grams:
+  - scenes battle: 38 occurrences
+  - movie really: 33 occurrences
+  - battle scenes battle: 38 occurrences
+  - scenes battle scenes: 38 occurrences
+
+Cluster 5 - Unique/Distinctive N-grams:
+  - movie boring: 27 occurrences
+  - hours life: 18 occurrences
+  - half hour: 13 occurrences
+  - boring movie: 36 occurrences
+  - watched movie: 16 occurrences
+  - 30 minutes: 12 occurrences
+  - 20 minutes: 17 occurrences
+  - get back: 12 occurrences
+
+Cluster 6 - Unique/Distinctive N-grams:
+  - look like: 42 occurrences
+  - feels like: 43 occurrences
+
+Cluster 7 - Unique/Distinctive N-grams:
+  - finding nemo: 24 occurrences
+  - disney pixar: 27 occurrences
+  - disney movie: 37 occurrences
+  - let go: 30 occurrences
+  - old man: 35 occurrences
+  - disney movies: 30 occurrences
+  - animated film: 23 occurrences
+  - toy story: 59 occurrences
+  - animated movie: 26 occurrences
+  - first time: 22 occurrences
+
+Cluster 8 - Unique/Distinctive N-grams:
+  - action scenes: 29 occurrences
+  - watching movie: 38 occurrences
+  - movies ever: 30 occurrences
+  - movie one: 31 occurrences
+  - fell asleep: 29 occurrences
+
+Cluster 9 - Unique/Distinctive N-grams:
+  - lord rings: 44 occurrences
+  - top 250: 42 occurrences
+  - pulp fiction: 51 occurrences
+  - mad max: 45 occurrences
+  - visual effects: 49 occurrences
+
+
+=== POTENTIAL CLUSTER THEMES ===
+
+
+Cluster 0 - Theme Scores:
+  Acting/Performance: 2.91 mentions per review
+  Emotional Response: 0.82 mentions per review
+  Plot/Story: 0.77 mentions per review
+  Direction: 0.33 mentions per review
+  Critical/Analytical: 0.23 mentions per review
+
+Cluster 1 - Theme Scores:
+  Plot/Story: 1.52 mentions per review
+  Acting/Performance: 1.11 mentions per review
+  Emotional Response: 0.85 mentions per review
+  Technical/Cinematography: 0.36 mentions per review
+  Genre-specific: 0.36 mentions per review
+
+Cluster 2 - Theme Scores:
+  Acting/Performance: 1.86 mentions per review
+  Direction: 1.61 mentions per review
+  Plot/Story: 1.15 mentions per review
+  Emotional Response: 0.78 mentions per review
+  Genre-specific: 0.56 mentions per review
+
+Cluster 3 - Theme Scores:
+  Emotional Response: 0.37 mentions per review
+  Plot/Story: 0.26 mentions per review
+  Critical/Analytical: 0.11 mentions per review
+  Acting/Performance: 0.10 mentions per review
+  Technical/Cinematography: 0.03 mentions per review
+
+Cluster 4 - Theme Scores:
+  Acting/Performance: 2.43 mentions per review
+  Plot/Story: 1.96 mentions per review
+  Emotional Response: 0.86 mentions per review
+  Genre-specific: 0.50 mentions per review
+  Direction: 0.48 mentions per review
+
+Cluster 5 - Theme Scores:
+  Plot/Story: 1.29 mentions per review
+  Emotional Response: 0.38 mentions per review
+  Acting/Performance: 0.36 mentions per review
+  Technical/Cinematography: 0.19 mentions per review
+  Genre-specific: 0.12 mentions per review
+
+Cluster 6 - Theme Scores:
+  Acting/Performance: 5.41 mentions per review
+  Plot/Story: 2.33 mentions per review
+  Direction: 1.86 mentions per review
+  Emotional Response: 1.46 mentions per review
+  Technical/Cinematography: 0.85 mentions per review
+
+Cluster 7 - Theme Scores:
+  Plot/Story: 1.91 mentions per review
+  Acting/Performance: 1.61 mentions per review
+  Emotional Response: 1.36 mentions per review
+  Critical/Analytical: 0.35 mentions per review
+  Technical/Cinematography: 0.30 mentions per review
+
+Cluster 8 - Theme Scores:
+  Acting/Performance: 1.55 mentions per review
+  Plot/Story: 1.50 mentions per review
+  Emotional Response: 0.94 mentions per review
+  Technical/Cinematography: 0.45 mentions per review
+  Critical/Analytical: 0.43 mentions per review
+
+Cluster 9 - Theme Scores:
+  Acting/Performance: 2.95 mentions per review
+  Plot/Story: 1.87 mentions per review
+  Direction: 1.56 mentions per review
+  Emotional Response: 1.36 mentions per review
+  Technical/Cinematography: 0.87 mentions per review
+
+=== RANDOM SAMPLE REVIEWS ===
+
+
+Cluster 0:
+ - so, why did I bother even turning it on? It was at the senior citizens club, I recognised some of the actors names and Gena Rowlands had rescued (from a 1 rating) a previous film, so I gave it a try. But not for long, after about 10 minutes I'd had enough, but then stuck it out.. til the 30 minute mark. That's enough.
+
+The deleted scenes on the DVD showed the explicit sex scenes if that's all you want to see but don't expect to learn much - except the vagaries of the MPAA values? PG 13? they're nuts.
+
+The basic story is flimsy, the acting is forgettable, there are zero especially good scenes, nor any memorable lines of dialogue. Anything to feel good about? Nah. Some views of the "Single Style" houses of the locations might make you think a bit about the way America's history?
+
+ - I had high expectations based on the positive reviews but was quite disappointed.
+
+The story had a good potential to explore a relationship between a sophisticated black pianist who employs a white working class driver as they travel through the US south in the sixties. They have seemingly nothing in common, from the way they were brought up, the way they speak and eat, their family backgrounds and financial situations, their way of treating other people. As they spend time together on the road trip, they start to appreciate each other and learn from each other.
+
+What bothered me was that the characters ended up being caricatures instead of being believable. The film tries to depict their differences to the point that it did not make sense. For example, we are supposed to believe that a black musical genius pianist never heard of Aretha Franklin or Little Richard? Or that he never tried fried chicken? I also thought that Viggo Mortensen was slightly over-acting.... The racial problems were not depicted in an authentic way.
+
+The movie just received an Oscar nomination for Best Picture, likely because of the social commentary and not because of great film-making.
+
+ - I am struggling to understand why the film has received such good reviews, as apart from the soundtrack, the film was very bland.
+
+Malek is like a spitting image style caricature of Freddie Mercury, and does not have the physical stature to play the great man. The supporting cast (Myers aside) are television actors at best - and that shows.
+
+When you get to the "story" it is very weak, and almost entirely made up. Such as Mercury splitting the band (Queen released several albums during the alleged split up), timing of releases, how they apparently got added to Live Aid at the last minute, when Mercury finds out he has aids. The list goes on!
+
+The music is incredible, and was the only reason that I sat through the entire film.
+
+I can see why Sacha Baron Cohen and Ben Whishaw decided against filming this poor interpretation of Mercury and Queen.
+
+----------------------------------------
+
+Cluster 1:
+ - Very disappointed with the movie, it's truly an awkward version of Robinson Crusoe, the only highlight is the picture is very sharp and beautiful.
+
+From the start, you feel like the director was trying to delivery some message along the story line, as the family met a storm at the sea, and PI became the only human being that survived in the sunk of the Japanese ship, along with a few animals from his father's zoo, you think that might be the start of the "moment of truth", but even to the end, the message is still not clear nor strong, making the viewers feeling lost.
+
+The high-tide is PI's experience at the sea, there're a lot of unreasonable scenes, like when a lot of fish flying over the boat and hit him, he seems pretty much intact, and after long struggle at the sea, he still looks fat and white.
+
+ - This is a good film...but not great.Many people find this film great,because 90% people are so emotional.The writing and editing is great along side it's unique idea.But I think if in the end Jamal lost every bit of money it will be a better finish and make this film a all time great.The things I dis-like most is ...
+
+1)After wining 2 million Jamal waited in the station but no one around him(no media..no journalist...no passenger).Previously(after winning 1 million) it shows he is so popular that every person in the road recognize him.
+
+2)After wining 1 million he is captured by the police because host of this show wants it.But after winning 2 million host don't call police.
+
+3)Actual cause of his(Jamal) coming to this show is he wants to be noticed by Latika.So, before the last question he succeed to his mission.So I think it will be more appropriate to show he win nothing(money)..but everything(meet Latika again) like a Millionaire.
+
+4)Most of all half of dialog of this film is in Hindi and other half in English...WHY?It should be completely Hindi or completely English.Last year's film "Môme, La" is completely in french and that makes it so good.
+
+5)Most of all if you think slightly you will realize that ...Jamal came from slum where nobody care about him and later part of his life same thing continue..suddenly because he win 1 million people cares about him...so if he lost money...then the station portion(sitting all alone and waiting for Latika) will be a master stroke.
+
+6)Jamal got entry in "Who Wants to be a Millionaire" from the call center.But it does not allow him to be in the hot seat.Because after somebody got the chance in phone he has to attend a question(which has all 4 write answer and you have to arrange it in Ascending Order and Descending Order)to be in the hot seat.But it should be shown in the film because about this the film is made.so it should be complete from beginning to end . 7)Most of all "Who Wants to be a Millionaire" never shown live..not in India and not in America too. My point is for only enjoyment it's a wonderful film..but it not gonna get Oscar.Because it has magic..but lack of logic.
+
+ - What a wonderfully original idea. I can't imagine there having been anything like this before. It might have been a motion picture, or a short, or an episode of a television series, or a television mini-series, or even a full-blown comedic television series. Who knows? If it had been produced, it might have been on the air between 1991 and 1994. It might have been a live action series rather than an animated cartoon or computer generated imagery animation. It might have been about a male character with people in his head representing his thoughts, moods, emotions, or personalities, instead of a female character. Just to be sure it would not have been a complete copy, it might have had a completely different title. Like "Herman's Head". Just to be sure I completely made all of this up, feel free to look that title up in IMDb.
+
+----------------------------------------
+
+Cluster 2:
+ - It's hard to watch a film on real history when that history is skewed. Therefore, since this movie refuses to acknowledge important facts, it falls way short of anything worthwhile. Granted, a book is a book, a screenplay is a screenplay and a movie is a movie, and in the face of fiction, liberties may be taken, but when they altered in light of fact, then the whole work is subsequently meaningless. By no means should this film earn any praises come Oscar night - especially for Best Screenplay when it's far from it.
+
+ - That so many retaliatory comments have flown along the lines of 'What's wrong with being patriotic?' and 'kiss my red and white striped ...' it seems perhaps the whole point of war films has been missed.
+
+Truly great war films transcend such heroic, staunch patriotism to deliver the message that war sucks. This film has been praised for its true portrayal of war, yet from veterans I've had contact with, their sentiments were that war was a nightmare for everyone - that they were all just men/boys in hell - despite whom they had sworn any allegiance to.
+
+And so many young people I've spoken to left this film with the thoughts 'thank god we were fighting alongside America' and that Germans were demonized. At the same time people are claiming that this film should be shown to all school children. Yet what message does the film send exactly? True - the first half hour is a brilliantly harrowing piece of cinema, which managed to brutally show the ugliness of war better than any film beforehand. Yet I feel a great war film should ignore patriotism and concentrate on how war debases humans of ALL nationalities, and indeed that war transcends these other superficial divisions.
+
+A good film? Yes. The greatest war film? Not on my top 5 - I'm inclined to lean towards Das Boot - true-to-history graphic brutality isn't everything.
+
+ - The first several minutes (after an introductory scene) show a vivid description of D-Day on one of the beaches invaded by American forces. Anyone who has read Cornelius Ryan's _The Longest Day_ already has images like those in his head (read the book, it's one of the best histories ever written). It starts the problem. There's too much of a jerky-camera effect. It's acceptable in the battle scene, but hardly in the rest of the movie, rendering it unwatchable for people like me.
+
+What I did see was a pretty fair fictional story based on a true story. Of course, a director like SS is hardly going to tell just a story, but has an agenda he's working behind the scenes, manipulating us into some snare or other where we have to accept his worldview on things. After all, we just *saw* it -- so it must be that way, right?
+
+Unfortunately, I couldn't see enough of it because of the camera work to try to decipher his hidden agenda. I don't even know how the movie came out, and frankly I don't care. Cloying as SS is in all his movies, this film is curiously unengaging, and the characters show little advance (Nazi, American GI) from the "Indiana Jones" films, which are still his best achievements.
+
+----------------------------------------
+
+Cluster 3:
+ - Warning-This review contains spoilers. What a bad movie this was and it received 8 Oscars.how dumb can people be.the entire movie is just crap.I would like to ask people who liked this movie to consider the following facts: 1)how is it possible that all the questions asked to the boy have happened in his life? 2)and if it did,how did it happen in exact chronological order? 3)anyone with general knowledge knows that people in slums don't go to school.how did the people from the slums of India begin talking English,while they've never been to school 4)why did the guy in the end choose to die in a tub with money rather than escaping.
+
+I challenge everyone who liked this movie to answer my questions
+
+ - This movie is about a guy who lost balance and by falling backwards succed in avoiding a couple of bullets. Thats it, sorry for spoiling
+
+ - This film concept does not attract me. The plot does not seem interesting.
+
+Thank you.
+
+----------------------------------------
+
+Cluster 4:
+ - (Not sure if this is considered to contain spoilers, so I checked the box. Read at your own risk.)
+
+First of all, I'd like to thank all those who wrote the 1-star reviews. The ones I read were hilarious! Thanks for the laughs, and I mean that! Secondly, my review is that the movie isn't so awful if accompanied by several Cosmos and you only paid six dollars for the ticket. If only I'd remembered to bring a Snuggie. And hadn't eaten so many mini-corndogs. Plus popcorn. Let's just say I did not dream too well last night.
+
+**Comes back after Preview.** What? I have to write ten lines? OK. I think I have discovered part of the problem. One must create something based only on length, not necessarily content, thus, the inception of Inception, to wit: Movie studio: This screenplay will only compute into a movie that lasts fifty-seven minutes. Screenwriter: Uh, really? OK. So I need to add something. I know! I'll make it a dream within a dream. Movie studio: At one hour, 23 minutes, it's still not long enough. People won't think they got their money's worth. Screenwriter: OK, how about a dream within a dream within a dream. Movie studio: By George, I think you're on the right track! And with Leo and Caine, we will rule the Academy! Don't give Caine too many lines, though, he'll want more money. Screenwriter: Gotcha.
+
+ - *SPOILERS*
+
+For me, there is a very obvious dividing point between the two parts of this movie: the scene where Dora comes home with her mother and realises her family has been deported. From then on, from that open door showing a devastated and empty apartment that painfully jerks you back from the fairylike world of comic knights rescuing princesses in puffy pink, nothing can be the same; yet the makers of this movie carry on as though it were. The first part works just fine in its way (that of course depends on whether you like Benigni's style at all or not), although it is pretty inferior to his other films. The second is quite simply awful. Fairytales can be incredibly cruel (and most of them in fact are), and there is nothing a priori wrong with trying to present a concentration camp situation in terms of a fairytale (although I suspect you'd need incredibly good writing and a totally different kind of actor). The problem is, here it was done badly and in a completely wrong way, because they had failed to understand they could not use the SAME fairytale as in the first half. As a result, what we actually get is a Viennese operetta. One feels one is watching `Die Fledermaus', complete with bumbling soldiers and in-and-out-of-the-prison-cell shenanigans.
+
+The whole premise - telling the kid it's all a game and acting up to support the lie - that so many found noble and heart-rending, is for me simply beyond stupid and irresponsible. I can almost hear a chorus whining: `Awww. but he's doing it for the kiiid.!' It matters zilch whether he's doing something `for the kid' (filmmakers so often assume that they can simply put a child in the movie, and the audience immediately send their brains on a tropical holiday; sadly, it works); what matters is WHAT he is doing. And what he does here would have killed his son, himself, and many of his comrades (incidentally, it is made so very obvious that they really don't mean anything to him; what are so many lives compared with his own child's dubious emotional comfort? Their survival literally depended on understanding the camp rules, but of course they have to be made unwilling participants in a silly game devised for one child's benefit - and it's not even that - instead. So where is this humanism everyone is gushing about?) within the first few weeks. There are two things he could have done, for different reasons: he could either simply have told his son the truth, and thereby equipped him for at least trying to survive (after all, it's a very smart child, as we learn from the first part - although how a smart child would have gone for months believing Guido's story in that environment is beyond me) and prevented him from unknowingly jeopardizing others; or lied to him to shield him psychologically before inevitable death comes. Perhaps a fatalist would indeed have chosen the second option, but only an idiot would have mistaken it for a survival strategy, and from then on Guido looks more like a real fool than a clown playing one.
+
+There are some powerful scenes in there: uncle Eliseo helping up a female guard who has tripped while herding him into the gas chamber; the riddle-obsessed doctor asking Guido for help (although you can see that one coming from miles away), but they are lost in all the incongruous clowning and sentimental schlock - like the inexcusable scene of Guido making a whole idiotic speech to his wife on the camp's loudspeaker system. Even leaving aside the implausibility of his ever getting the chance, the sheer stupidity of the very idea, and the certainty that he and Giosue' would have been killed on the spot for such a transgression (before that, we heard how every child is to be killed, and so Giosue' is hidden, yet now the Nazis find him happily babbling into the microphone and nothing happens?! Are we all supposed to be on the toilet at this point and so not notice?) - what is the purpose of that speech?! Having the oh-so-cute line `Buongiorno, principessa!' and similar inanities that just don't belong there repeated yet again? For the purpose of letting her know they're still alive, one word would have been enough. In the end, even his death somehow manages to seem unreal. Instead of shaken and saddened, I was left rather relieved I did not have to support this selfish and foolish person's annoying presence on the screen anymore.
+
+"La vita e' bella" contains a lot of superficial "joie de vivre", and doesn't want us to think much, as though encountering unspeakable evil were the same thing as grabbing a quick bite; and this movie is a cinematic equivalent of a pizza fast food chain.
+
+ - I simply can't believe all the 10's and 9's...it's utter sh#te
+
+Doesn't knit together, aweful dialogue with some laughable narrative.
+
+Instantly forgettable tripe
+
+----------------------------------------
+
+Cluster 5:
+ - People, listen to me. I just rented this movie and was so bored that I didn't even watch it. I only watched the first 30 minutes. It was that bad. Just like one of the users said, the top 250 films list is definetly unreliable. First they got the Godfather. I agree with that. But star wars? What kind of faggots like that? The Godfather is excellent, and people voting here, who are men, need to act like men. The story is boring because it's told in backwards storytelling. How dumb is that? It confused me so much I turned it off. The beginning scene he kills the guy and the rest of the movie is about finding the guy and killing him. Plus the man shaves his legs. Men don't shave their legs, women do.
+
+ - I hated it.
+
+It had plot holes bigger than Swiss cheese, with a pungent odor of recycled garbage. I think watching this one dimensional film for almost two hours has given me my own psychotic breakdown.
+
+The end.
+
+ - Someone pls tell me how to not just watch the trailer in detail I'm confused
+
+----------------------------------------
+
+Cluster 6:
+ - I love Fincher. 'Fight Club' and 'The Game' are definitely on my favourites list. This movie left me cold. At least I was knitting so I don't consider those nearly 3 hours as wasted. But alas! such a nice idea utterly destroyed...
+
+The plot has many inconsistencies let me name just few:
+
+1# I don't see the reason why Benjamin's mind is getting old too. Dementia as we all know has biological causes and has a lot to do with our bodies getting old. It would be much more fascinating if instead of being a demented child he would spread wisdom of his old age as a three- four years old. If there was any deep experience in his life, that is...
+
+2# Although every single relationship in his life is supposed to be very deep and meaningful it is very hard to believe so because he doesn't seem attached to anybody including 'love of his life' - Daisy. Yes, they meet now and then and have a child together but it looks mostly like a fling nothing more. It's far too easy for him to leave her, as if he knew that getting younger he would be even more irresistible for her :) I caught myself thinking that maybe it's because his mother died at his birth and his father abandoned him. But we are to believe that this black woman was born to be mother (despite putting him inside a drawer at first) - if she was such a good mother - how come that he had such a blank stare at her funeral?
+
+3# Daisy never tells her daughter about her dancing career despite the fact that she has a ballet school, so I assume she was claiming no experience whatsoever to her pupils, right?
+
+In general I think that Brad Pitt's acting was terrible. Frankly - it wasn't probably his fault because out of this boring droll of a cinematographic art only 15 minutes or so where suited to his personality but sadly those 15 min consisted mostly of him riding motorcycle in a nice landscape or shacking up with the most cold and wooden chick around. Their passion was as believable as his peculiar condition. And his condition makes him never really old or young and never ever getting a pair of balls.
+
+As somebody nicely pointed out - no conflict whatsoever - it's not a surprise when there is no attachment. There was no grief, no anger, no real suffering. He is dull and alone but doesn't even develop any interesting addiction. How about trying to stop his fate? He is never growing up and acquiring any wisdom.
+
+At the end I drop some tears and in retrospect I think it was my gut reaction to see 'mother' with a dying baby.
+
+ - I have tried, and tried again to like this film. But I fail after the first fifteen minutes. For a start it is a Henry Fonda vehicle based on a television play. And sadly it still looks like and feels like a television play. The line up of actors like Ed Begley, Lee J. Cobb etc is impressive and they act well if over theatrically. Fonda is Fonda and I repeat he is the star and he does his best to shrug off his usual coldness on film. I have nothing against his acting except that I do not respond to his way of performing. A little more warmth, and being less dour I would perhaps, and it is a big perhaps, to respond to him better. So this for me is one of the fault lines in the film and his stabbing a knife on the table is a great moment. Being a big star the moment has tremendous impact, and no doubt most audiences are caught. As for the plot of the film it is about a youth who has to all intents committed a murder and twelve jurors debate about his going to the electric chair or not. I know it was 1957 and just maybe it was too daring to ask but no one questions capital punishment in itself, and twelve angry men could dispute that in itself but of course it is not on the table. The film is often praised for its camera movements, claustrophobic towards the end and less so at the beginning. The only unintended humour for me was one of the more elderly men taking too long in the toilet. Or bathroom in ' respectable ' terms and the latter is of course used. No spoilers to the ending. But with signposts all the way a child could work it out. I also have not read in any reviews of this ' great ' film that the jurors are all baying for blood, and to get out of the room on a hot day as soon as possible. My opinion is I know a minority one, but for me the film does not dare to even question the biggest of all basic and human issues and that is if capital punishment is right or wrong in itself.
+
+ - Well well. Luc Besson takes on John Cassavetes for the first time in this pastiche (for the first half, anyway) of Gloria. Jean Reno is an illiterate Italian (? it's not totally clear, but this is how he's referred to) hit-man in his 40s in New York, a simpleton with no friends other than his plant, an assassin of inordinate skill (though we see no real evidence of this until the very end of the film) who takes in an orphaned Natalie Portman, a pre-teen when this was filmed but dressing like a hooker through most of the film, eventually agreeing to teach her the assassin's art so she can revenge herself upon the killer of her horrible family, Gary Oldman as an insane, dirty-cop drug-addict DEA officer. Got it? Yeah, I got it, it wasn't hard to figure out....though none of it made any sense, ever. There are a few reviews of this film that have suggested that it be looked at as existing in sort of a fantasy world, and that would seem to be a better way of looking at it. Not much makes sense if looked at in real-world terms, even less sense than in usual in a violent action movie; but the film doesn't seem to have any internal logic. Reno is the hit-man to end all hit men despite being an illiterate simpleton? Oldman is some fairly high-level cop despite being so obviously, categorically insane? There never seem to be any extras around in most of the indoor scenes; there's a whole 5-minute scene in a washroom between Oldman and Portman and nobody intrudes. None of this works in a film that ostensibly takes place in a real New York City Let's talk about the acting. Though I didn't think Reno's character made any sense, I rather liked him, I got taken in by his charm; Oldman on the other hand played a complete cartoon character. Did he play him well? Perhaps. I don't know. Was he supposed to be a cartoon? Did Besson think this was a cool idea? I guess so. It didn't work for me, at all. It was awful. And Portman; I'm not going to necessarily argue that her performance was bad, I'll give a 12-year-old the benefit of the doubt when playing a character that has to alternate between cutesy, slutty, and determined; but again, I didn't buy the person she was supposed to be. And although at the end the film never....quite....indulges in the pedophilic fantasies that it seems to be heading towards, it still comes to close for comfort. Portman wears skimpy outfits throughout, and the camera pays more attention to her ass than is probably necessary. Were this my first Luc Besson film, I might have given him a bit of a pass, but given his usual predilection for waifish, very young model types...ewww.
+
+The ending is sentimental, trite, and completely unbelievable. It's an extension of the film as a whole, which probably doesn't even deserve the 3/10 I'll give it.
+
+----------------------------------------
+
+Cluster 7:
+ - Films like these makes me wonder and think that some producers are 3 year old kids who are in love with sponge bob and have not seen a decent movie in all their lives. Why would anybody put two dollar together to produce such a nonsense. there is no story, there are no good songs, the actors can barely sing a lullaby,
+
+ - I love this movie, It has all the stuff you can Imagine, magic, imagination, and talking snow man! :D I freaking love this movie. I am sorry for the caps but I LOVE THIS MOVIE! 10/10 If they make a Frozen 2 I'll give it a 10 because I just love frozen. If anyone gives this movie a bad review, they've obviously never saw the movie, and Just jealous that they can't raise 1.3 billion bucks in Box Office. And How To Train your Dragon 2 thinks that their abomination of a movie is better than frozen, I'd like to see them raise a billion bucks in their Box Office, Obviously the characters in the movie sound lame anyway. go frozen!
+
+ - It was nothing like the books which are amazing. Only 2% of the source material made it to the big screen.
+
+For one I would have loved to see baby Toothless instead this new non book breed with retractable teeth.
+
+----------------------------------------
+
+Cluster 8:
+ - Walking out of this movie, I felt giddy and excited. It was a fun flick with impressive special effects that didn't seem entirely tacked on.
+
+But the more I thought about it, the more I felt cheated and manipulated. The plot was fairly decent... for the first half of the film. Then it pulls out and lets the special effects take over. I know the purpose of film is to manipulate emotions, but being stroked into thinking a movie is great because it looked pretty is just insulting.
+
+I recommend seeing it at least once, especially on a big screen, but not because it's the great sci-fi film everyone's touting it to be--because it's a good two hours of mindless entertainment with some decent loud music and entrancing special effects.
+
+ - I am not sure exactly why I am so disappointed with this movie. Maybe as I had greater expectation, maybe because of respect for Mel Gibson, but finally I went to see this movie in a cinema and for the first time I have left the place before the movie ended. It was truly unwatchable and when you wait for more than a half of the movie with really bad excuse for acting, than the real nightmare starts. If watched as a comedy, it does deserves a 4, but for the movie what it should be, I would like some rate with 1, but higher than that, it is just false, but the majority have decided that it is a more than a good movie, so be it!
+
+ - Impressive and very nice.
+
+There is very little that I can add to the reviews on here, that have explained what is so wonderful about The Godfather so well. I have seen many amazing movies, as well as some clunkers, but The Godfather was beyond amazing. There are so many images, details and scenes that I seriously cannot get out of my head since watching it for the first time just nine hours ago. The Godfather is so incredibly well-made and acted that it stands out among the rest of those other amazing films I've seen, so much so I couldn't think of a single flaw, and I am struggling to think of a good enough reason to why I didn't see this film before now .In conclusion, absolutely amazing, and I can see completely why it is considered one of the 10 greatest movies ever made, it is that good. In fact my 15-year old brother loved it so much, he wants to see it again. 10/10, though this film is too good for that rating. Bethany Cox.
+
+----------------------------------------
+
+Cluster 9:
+ - I think one of the most disappointing pieces of news I've ever heard in my life was that James Cameron was just going to make 'Avatar' sequels from here on out. He's unbelievably talented as we know from everything he did before 'Avatar'. This film though was a massive let down.
+
+I feel like all that he cared about in making this film was the visual effects. He just wanted to blow people away with what he could show them, and decided just any old plot would do. It's about as cookie-cutter as scripts ever get, just checking each tick mark along the way.
+
+The film is long and it feels long. Nothing of interest happens for lengthy periods and even when something of interest does happen you don't care because there are no characters to give a hoot about.
+
+This film was not for me in case you can't tell. It represents everything I hate in cinema. Safe, unoriginal, by the book nonsense. A generous 3/10.
+
+ - This is an okay-decent movie. However, seeing its' place in the top 250, I kind of got my expectations up a little too high. It will not totally disappoint, but it is not one of the best movies of all time.
+
+First off, surprisingly, this is a pure western. I was never a huge fan of pure westerns. That being said, as far as pure westerns go, this is in fact one of the better ones I've ever seen. The Good, the Bad, and the Ugly comes to mind as probably the best pure western I've seen so I can draw my comparisons from that. I also actually liked the Quick and the Dead, even though most critics didn't, and that's a modern classic western I can compare it with, which also stars DiCaprio. This movie has more substance to it than Quick and the Dead, but overall, it's not much different. If you do have a thing for westerns, then you will probably really like this movie.
+
+There are some minor complaints in my opinion. Being that it is supposed to be a classic pure western type of movie, at times it felt like Back to the Future III in that the main character often acted like it was 2012 even though it was supposed to be the late 1800s. One scene that comes to mind is when he's wearing hip shades while they're traveling through the prairies to Candyland. A bigger example is how and why they chose to play rap music during some of the scenes, especially the gun battles. I found this silly and retractable from the setting of the classic old west. It was like a mixture of cultures and I really didn't like the choice as it almost ruined the setting in a way. What they should have done was just go with classic western music or basic suspenseful music. I don't like when modern movies do stuff like this. It ruins the authenticity a little bit and takes away from the quality and movie experience, especially when they used it in the climactic scenes and shootouts. Samuel L Jackson's character literally looked like an African American version of Biff on Back to the Future II. I was wondering why he looked so familiar and it finally hit me. BTTF III was more clearly stating that it was in fact a combination of 1990 and the late 1800s as far as blending the cultures of the protagonists with the setting; Django Unchained not so much. This was a flaw.
+
+My other complaint about the film is that it was TOO LONG. Please, use some editing. They could have shaved off 10-15 minutes EASILY from this film just on long drawn out scenes like the trek through the country to Candyland and the drawn out sit down meetings consisting of heavy dialogue. It wasn't the dialogue that was the issue and I do like the added drama and pauses and suspense, but for a film to be this long due to extra drawn out scenes so much is unnecessary. How the entire final scene begins with Django talking the transporters into the bounty and letting him go was a little bit far fetched too, but Im not going to discredit it too much as the writing needed a device to get him back on the road to Candyland and this will do. My issue is that again, it just took way too long to get this final scene going; I would have rather had the major gun battle be the final scene and just have Django rescue his wife and blow the place up there- it would have saved another 20 minutes.
+
+That being said, this was a very well acted and well constructed movie overall. Any time you have to recreate the old west, it's going to be a challenge, and for that I think they did a good job. Waltz was great again, and they had an all-star cast of supporting actors. This was some of DiCaprio's best work, but as I watched it, I really couldn't help but think to myself how much better his character would have been with Gene Hackman in that role. This is not taking anything away from Dicaprio's excellent performance, but I thought his character could come across a little more cruel if he wasn't so young looking. Still, Dicaprio pulls it off with flying colors.
+
+The best scenes are in the beginning and middle. This movie is so long that it sets itself up on its' own to have very slow and boring parts that as I mentioned could have been edited to make the movie even better. Still, it makes up for much of its' flaws with its' dialogue, acting, cinematography, originality, and overall interesting story. It's an okay film but sloppy and silly, and not one of the best of all time.
+
+ - Rule one of movie-making - while hand-held camera work SOMETIMES increases the intensity and urgency of a situation. A whole film where the cameraman is drunk and someone lost the tripod - sux big time.
+
+Buy a damn tripod guys. Yes you Hollywood.
+
+I told 6 of my friends that this was the movie to see. Yeah yeah, it was gonna be good. etc. etc. Oh boy was I wrong. All of my friends complained about the 'indie' film-making technique. One of my friends had to close her eyes she was getting sea sick! Wobble, wobble, wobble. Verdict - this movie was ruined by rubbish camera work. Someone in the cinema actually shouted out, "Hold the camera straight dude."
+
+And what is with the endless close-ups on out-of-focus faces or bits of people?
+
+Go back to film school guys, or better yet, BUY A DAMN TRIPOD! I know you're trying to be way out and experimental, blah, blah, blah. I can't believe you finished this picture and released it in this condition.
+
+Please tell me this is NOT the way filmaking is going. By the way Hollywood, the hand-held camera is NOT realistic. When i run along, my eyes focus on something and remain steady. If my head shook about like your camera, it would explode. Try using script, actors and pacing to forward your story, rather than amateurish camera-work that hides bad fight choreography and slow car chases where the filmmakers are restricted by inner city speed limits.
+
+----------------------------------------

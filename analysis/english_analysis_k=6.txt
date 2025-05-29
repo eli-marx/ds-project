@@ -1,0 +1,534 @@
+====== CLAUDE SUMMARY ======
+
+IMDB Review Clustering Analysis: Six Types of Movie Critics
+Overview
+This unsupervised clustering analysis reveals six distinct patterns in negative movie reviews, each representing different critical perspectives and writing styles. The clusters range from performance-focused critiques to extremely brief dismissals.
+
+Cluster 0: The Performance Purists
+Size: 1,225 reviews | Avg Rating: 2.43 | Avg Length: 55 words
+
+Key Characteristics:
+Primary Focus: Acting quality and character portrayal
+Top Keywords: scenes, screenwriting, scripts, biopics, dramas
+Distinctive Terms: actor_name (0.669), acting (0.165), character (0.156)
+Movie Focus: Biopics and character-driven films (Bohemian Rhapsody, La La Land, Joker)
+Critical Insight:
+These reviewers are acting purists who judge films primarily on performance quality. They mention actors by name frequently (0.99 times per review) and focus on whether performances feel authentic. Their criticism often centers on "over-acting," unconvincing portrayals, or miscast roles.
+
+Sample Pattern: "I found Tom Hanks annoying through out. From his Over-Acting the Part, to his fake accent."
+
+Cluster 1: The Plot Analysts
+Size: 1,492 reviews | Avg Rating: 2.45 | Avg Length: 121 words
+
+Key Characteristics:
+Primary Focus: Story logic and narrative coherence
+Top Keywords: comedies, tropes, hackneyed, cliches
+Distinctive Phrases: "make sense" (64x), "looks like" (54x), "feels like" (53x)
+Movie Focus: Complex narratives (Interstellar, Fight Club, Inception)
+Critical Insight:
+These are analytical viewers who dissect plot mechanics and storytelling choices. They write longer reviews (121 words avg) examining whether stories make logical sense, often criticizing predictability and overused tropes. They're frustrated by films that don't hold up to scrutiny.
+
+Sample Pattern: Reviews that methodically break down why plot elements don't work or feel derivative.
+
+Cluster 2: The Cinephile Critics
+Size: 428 reviews | Avg Rating: 2.48 | Avg Length: 93 words
+
+Key Characteristics:
+Primary Focus: Directorial vision and filmmaking craft
+Top Keywords: hollywoodization, cinematography, moviemakers, filmmakers
+Genre Specialty: War films (60% of top movies are war-related)
+Director Focus: High mention of director names (0.77 per review)
+Critical Insight:
+These are serious film students who evaluate movies through a craft lens. They're particularly harsh on war films, critiquing "Hollywoodization" of serious subjects. They understand filmmaking technique and judge movies against artistic standards rather than entertainment value.
+
+Sample Pattern: Technical critiques about direction, cinematography, and how films handle serious subject matter.
+
+Cluster 3: The Brutal Dismissers
+Size: 998 reviews | Avg Rating: 2.08 | Avg Length: 22 words
+
+Key Characteristics:
+Style: Extremely brief, harsh dismissals
+Top Keywords: mediocrity, boringness, dullness
+Signature Phrases: "worst movie year sucks" (repeated pattern)
+Low Engagement: Minimal mention of actors/directors
+Critical Insight:
+These are impatient viewers who write scathing one-liners. They represent the "Twitter-style" of film criticism - quick, brutal, and designed for maximum impact with minimum effort. Their reviews often use repetitive harsh language and dismiss films entirely rather than analyzing specific elements.
+
+Sample Pattern: "Rubbish, don't waste your time watching this movie" or repetitive phrases about movies being the "worst."
+
+Cluster 4: The Auteur Analysts
+Size: 1,678 reviews | Avg Rating: 2.44 | Avg Length: 121 words
+
+Key Characteristics:
+Focus: Director and actor combinations
+Top Keywords: cinematography, "spielbergisms," hollywoodized
+High Name Recognition: Most mentions of both directors (0.82) and actors (1.17) per review
+Movie Focus: Auteur-driven films (Tarantino, Nolan, etc.)
+Critical Insight:
+These reviewers are film buff critics who view movies through the lens of directorial style and star power. They're knowledgeable about filmmakers' typical approaches ("Spielbergisms") and judge films against directors' previous work. They expect consistency from established auteurs.
+
+Sample Pattern: Reviews that reference director's other works and compare performances across an actor's filmography.
+
+Cluster 5: The Boredom Brigade
+Size: 1,886 reviews | Avg Rating: 2.38 | Avg Length: 55 words
+
+Key Characteristics:
+Primary Complaint: Movies being boring or unengaging
+Top Keywords: thrillers, worstfilm, mediocrity, letdowns
+Signature Phrases: "watching movie" (69x), "boring movie" (53x)
+Expectation Focus: Movies failing to deliver on genre promises
+Critical Insight:
+These are entertainment-seeking viewers who judge films purely on engagement value. They're not interested in artistic merit - they want to be entertained. Their criticism focuses on pacing, excitement, and whether films live up to their genre expectations (especially for thrillers and action films).
+
+Sample Pattern: Reviews emphasizing how movies failed to hold their attention or deliver expected thrills.
+
+Key Insights & Patterns
+Review Length as Identity Marker:
+Longest: Clusters 1 & 4 (121 words) - Analytical types who need space to explain
+Shortest: Cluster 3 (22 words) - Quick dismissers who don't elaborate
+Medium: Clusters 0, 2, 5 (54-93 words) - Focused criticism on specific aspects
+Rating Patterns:
+All clusters hover around 2.4/10 average, except Cluster 3 (2.08) - the harshest critics who give the lowest scores.
+
+Movie Preferences Reveal Critic Types:
+Cluster 0: Drawn to biopics and character studies
+Cluster 1: Attracted to complex, high-concept films
+Cluster 2: Focus on "serious" cinema, especially war films
+Cluster 4: Gravitate toward auteur and star-driven films
+Cluster 5: Watch mainstream entertainment across genres
+The "Actor Name" Phenomenon:
+The frequency of mentioning actors by name reveals critical approach:
+
+High mentions (Clusters 0, 4): Performance-focused criticism
+Low mentions (Clusters 3, 5): Story/entertainment-focused criticism
+Conclusion
+This clustering reveals that negative movie criticism isn't monolithic - it fragments into distinct critical philosophies. From performance purists to boredom-intolerant viewers, each cluster represents a different way audiences engage with and judge films. Understanding these patterns could help filmmakers, marketers, and critics better understand how different audience segments evaluate movies.
+
+
+=== KEYBERT KEYWORDS ===
+
+Cluster 0 keywords: [('scenes', 0.4494), ('screenwriting', 0.435), ('scripts', 0.4263), ('thrillers', 0.4234), ('biopics', 0.417), ('dramas', 0.4167), ('brokeback', 0.4162), ('comedy', 0.4012), ('screenwriters', 0.4009), ('critics', 0.3951)]
+Cluster 1 keywords: [('comedies', 0.4371), ('tropes', 0.4315), ('thrillers', 0.4243), ('hollywoodisms', 0.4239), ('hackneyed', 0.4229), ('tarantinoloveofgunsandshootingthingsisreallycool', 0.4189), ('comedy', 0.4075), ('hollywoodized', 0.3908), ('screenwriting', 0.3841), ('cliches', 0.3831)]
+Cluster 2 keywords: [('hollywoodization', 0.5003), ('cinematogophry', 0.4787), ('comedies', 0.4684), ('tropes', 0.4508), ('moviemakers', 0.4423), ('anachronisms', 0.4324), ('documentaries', 0.4156), ('hollywood', 0.4143), ('filmography', 0.4092), ('filmmakers', 0.4062)]
+Cluster 3 keywords: [('mediocrity', 0.453), ('boringness', 0.4127), ('mediocre', 0.405), ('critics', 0.4013), ('dullness', 0.3864), ('cinema', 0.3836), ('clichéd', 0.3805), ('cliched', 0.3805), ('ratings', 0.3773), ('masterpieces', 0.3742)]
+Cluster 4 keywords: [('cinematograpthy', 0.4486), ('spielbergisms', 0.4452), ('comedies', 0.44), ('hollywoodized', 0.4351), ('critics', 0.4255), ('hollywoodised', 0.4168), ('review_silence_of_the_lambs', 0.4112), ('thrillers', 0.3878), ('biopics', 0.3834), ('comedy', 0.3831)]
+Cluster 5 keywords: [('thrillers', 0.423), ('worstfilm', 0.4078), ('critics', 0.4046), ('comedies', 0.4013), ('screenwriting', 0.3784), ('mediocrity', 0.3722), ('hackneyed', 0.3711), ('portrayals', 0.3687), ('opinions', 0.365), ('letdowns', 0.363)]
+=== TF-IDF DISCRIMINATIVE TERMS ===
+
+Cluster 0 - Most Discriminative Terms:
+  actor_name: 0.669
+  people: 0.183
+  great: 0.175
+  best: 0.166
+  acting: 0.165
+  director_name: 0.162
+  character: 0.156
+  better: 0.136
+  love: 0.128
+  bad: 0.123
+
+Cluster 1 - Most Discriminative Terms:
+  people: 0.364
+  actor_name: 0.247
+  character: 0.216
+  characters: 0.202
+  plot: 0.176
+  love: 0.173
+  end: 0.171
+  man: 0.146
+  real: 0.145
+  world: 0.145
+
+Cluster 2 - Most Discriminative Terms:
+  war: 0.496
+  director_name: 0.382
+  people: 0.297
+  actor_name: 0.270
+  great: 0.158
+  scene: 0.150
+  bad: 0.131
+  scenes: 0.121
+  characters: 0.120
+  real: 0.114
+
+Cluster 3 - Most Discriminative Terms:
+  people: 0.445
+  boring: 0.327
+  bad: 0.228
+  got: 0.218
+  say: 0.181
+  thing: 0.169
+  worst: 0.169
+  better: 0.167
+  understand: 0.146
+  waste: 0.142
+
+Cluster 4 - Most Discriminative Terms:
+  actor_name: 0.456
+  director_name: 0.320
+  people: 0.222
+  bad: 0.181
+  plot: 0.177
+  character: 0.173
+  characters: 0.165
+  great: 0.156
+  acting: 0.134
+  better: 0.133
+
+Cluster 5 - Most Discriminative Terms:
+  plot: 0.263
+  people: 0.254
+  boring: 0.225
+  bad: 0.217
+  characters: 0.207
+  great: 0.192
+  actor_name: 0.187
+  10: 0.182
+  better: 0.179
+  end: 0.173
+
+
+=== MOVIE & RATING DISTRIBUTION ===
+
+Cluster 0:
+  Size: 1225 reviews
+  Top movies:
+    - Bohemian Rhapsody: 84 reviews
+    - La La Land: 59 reviews
+    - Joker: 48 reviews
+    - A Beautiful Mind: 45 reviews
+    - Titanic: 44 reviews
+  Average rating: 2.43
+  Rating std: 1.17
+
+Cluster 1:
+  Size: 1492 reviews
+  Top movies:
+    - Interstellar: 56 reviews
+    - Fight Club: 54 reviews
+    - Inside Out: 53 reviews
+    - Inception: 45 reviews
+    - The Notebook: 44 reviews
+  Average rating: 2.45
+  Rating std: 1.13
+
+Cluster 2:
+  Size: 428 reviews
+  Top movies:
+    - Saving Private Ryan: 103 reviews
+    - Inglourious Basterds: 66 reviews
+    - Life Is Beautiful: 62 reviews
+    - Schindler's List: 45 reviews
+    - Hacksaw Ridge: 42 reviews
+  Average rating: 2.48
+  Rating std: 1.18
+
+Cluster 3:
+  Size: 998 reviews
+  Top movies:
+    - The Shawshank Redemption: 60 reviews
+    - Joker: 49 reviews
+    - Bohemian Rhapsody: 48 reviews
+    - Parasite: 47 reviews
+    - 2001: A Space Odyssey: 38 reviews
+  Average rating: 2.08
+  Rating std: 1.17
+
+Cluster 4:
+  Size: 1678 reviews
+  Top movies:
+    - Django Unchained: 76 reviews
+    - Titanic: 71 reviews
+    - The Dark Knight: 60 reviews
+    - Inglourious Basterds: 59 reviews
+    - Avatar: 51 reviews
+  Average rating: 2.44
+  Rating std: 1.16
+
+Cluster 5:
+  Size: 1886 reviews
+  Top movies:
+    - Avatar: 76 reviews
+    - Interstellar: 67 reviews
+    - Gone Girl: 67 reviews
+    - 2001: A Space Odyssey: 64 reviews
+    - The Dark Knight: 62 reviews
+  Average rating: 2.38
+  Rating std: 1.17
+
+
+=== REVIEW LENGTH ANALYSIS ===
+
+Cluster 0:
+  Average length: 54.7 words
+  Median length: 49.0 words
+
+Cluster 1:
+  Average length: 120.5 words
+  Median length: 84.0 words
+
+Cluster 2:
+  Average length: 92.5 words
+  Median length: 70.0 words
+
+Cluster 3:
+  Average length: 21.6 words
+  Median length: 13.0 words
+
+Cluster 4:
+  Average length: 121.1 words
+  Median length: 96.0 words
+
+Cluster 5:
+  Average length: 54.5 words
+  Median length: 49.0 words
+
+
+=== SPECIAL TOKEN USAGE ===
+
+Cluster 0:
+  director_name: 293 total (0.24 per review)
+  actor_name: 1207 total (0.99 per review)
+
+Cluster 1:
+  director_name: 282 total (0.19 per review)
+  actor_name: 754 total (0.51 per review)
+
+Cluster 2:
+  director_name: 331 total (0.77 per review)
+  actor_name: 234 total (0.55 per review)
+
+Cluster 3:
+  director_name: 11 total (0.01 per review)
+  actor_name: 20 total (0.02 per review)
+
+Cluster 4:
+  director_name: 1378 total (0.82 per review)
+  actor_name: 1961 total (1.17 per review)
+
+Cluster 5:
+  director_name: 258 total (0.14 per review)
+  actor_name: 470 total (0.25 per review)
+
+
+=== UNIQUE N-GRAMS PER CLUSTER ===
+
+Cluster 0 - Unique/Distinctive N-grams:
+  - actor_name good: 38 occurrences
+  - good acting: 30 occurrences
+  - freddie mercury: 40 occurrences
+
+Cluster 1 - Unique/Distinctive N-grams:
+  - make sense: 64 occurrences
+  - looks like: 54 occurrences
+  - movie like: 54 occurrences
+  - old man: 58 occurrences
+  - feels like: 53 occurrences
+
+Cluster 2 - Unique/Distinctive N-grams:
+  - war ii: 22 occurrences
+  - world war ii: 22 occurrences
+  - war movie: 58 occurrences
+  - first half: 21 occurrences
+  - world war: 50 occurrences
+  - war film: 32 occurrences
+  - war movies: 17 occurrences
+  - true story: 19 occurrences
+  - schindler list: 39 occurrences
+  - concentration camps: 19 occurrences
+
+Cluster 3 - Unique/Distinctive N-grams:
+  - movie year sucks: 25 occurrences
+  - sucks much got: 25 occurrences
+  - much got: 26 occurrences
+  - much got prolapse: 25 occurrences
+  - worst movie year: 26 occurrences
+  - watching worst movie: 24 occurrences
+  - year sucks much: 25 occurrences
+  - prolapse watching worst: 24 occurrences
+  - year sucks: 25 occurrences
+  - watching worst: 24 occurrences
+
+Cluster 4 - Unique/Distinctive N-grams:
+  - look like: 62 occurrences
+  - pulp fiction: 63 occurrences
+
+Cluster 5 - Unique/Distinctive N-grams:
+  - watching movie: 69 occurrences
+  - movie would: 66 occurrences
+  - watched movie: 51 occurrences
+  - boring movie: 53 occurrences
+
+
+=== POTENTIAL CLUSTER THEMES ===
+
+
+Cluster 0 - Theme Scores:
+  Acting/Performance: 2.99 mentions per review
+  Plot/Story: 1.03 mentions per review
+  Emotional Response: 0.84 mentions per review
+  Direction: 0.56 mentions per review
+  Genre-specific: 0.30 mentions per review
+
+Cluster 1 - Theme Scores:
+  Acting/Performance: 2.28 mentions per review
+  Plot/Story: 1.94 mentions per review
+  Emotional Response: 1.08 mentions per review
+  Genre-specific: 0.50 mentions per review
+  Direction: 0.45 mentions per review
+
+Cluster 2 - Theme Scores:
+  Acting/Performance: 1.99 mentions per review
+  Direction: 1.64 mentions per review
+  Plot/Story: 1.24 mentions per review
+  Emotional Response: 0.79 mentions per review
+  Genre-specific: 0.56 mentions per review
+
+Cluster 3 - Theme Scores:
+  Plot/Story: 0.49 mentions per review
+  Emotional Response: 0.36 mentions per review
+  Acting/Performance: 0.15 mentions per review
+  Critical/Analytical: 0.11 mentions per review
+  Technical/Cinematography: 0.06 mentions per review
+
+Cluster 4 - Theme Scores:
+  Acting/Performance: 4.14 mentions per review
+  Plot/Story: 2.18 mentions per review
+  Direction: 1.82 mentions per review
+  Emotional Response: 1.47 mentions per review
+  Technical/Cinematography: 0.90 mentions per review
+
+Cluster 5 - Theme Scores:
+  Plot/Story: 1.65 mentions per review
+  Acting/Performance: 1.36 mentions per review
+  Emotional Response: 0.93 mentions per review
+  Technical/Cinematography: 0.46 mentions per review
+  Critical/Analytical: 0.36 mentions per review
+
+=== RANDOM SAMPLE REVIEWS ===
+
+
+Cluster 0:
+ - One of the jewels in the crown of the 70s cinema, The Godfather tells the story of the Corleone family. Itialian immigrants, caring people, and mafioso. From the first frame in which you see Marlon Brando's face lit from in front and above like a dark angel to the last frame of the last film in which Al Pacino's wineglass falls out of his hand as he slumps, the family gone and destroyed.
+
+The Godfather is the holy trinity of mob films. Every film after it has its influences in it, and, much like some people look towards the Star Wars trilogy for an answer to every question, many people do so for The Godfather.
+
+ - I'm glad so many loved this film. And found it life altering. But, truth be told, I simply could not!!!!! I found Tom Hanks annoying through out. From his Over-Acting the Part, to his fake accent. I usually enjoy his films. But, for me, this one was a Bust!!!
+
+Sally Field was a breath of fresh air from beginning to end. Which is why I gave the film a 3 and not a1.
+
+I never understood why this film scored so high.
+
+ - I think it was too long and boring. I never heard of John Nash before but when a film bases someone's life that I haven't a clue about, I wouldn't be interested. I only watched this because everybody was ranting on that it was a good movie and what not. I just didn't find it interesting, I know Russell Crowe was on this and he can be a good actor but, this isn't one of his best he has done. When he was in Les Miserables, boy it was worse in his film career too in my opinion!
+
+I wanted to give this movie another star because the soundtrack was easy listening and pretty great! Maybe if I was into maths and know who John Nash was, then I would give this a 10/10 regardless of how long the movie is! I just didn't fancy watching it further, that's all I can say!
+
+----------------------------------------
+
+Cluster 1:
+ - It may look cool, but underneath is an absolutely terrible movie. Avatar may be one of the worst I've ever seen. I would like to hear what a deaf person has to say about this piece of garbage. Did a child write it? I would like to write a nice, eloquent review but I'm at a loss. There's a possibility I've suffered brain damage from watching Avatar. The characters and the dialogue feel like a joke. As if someone went out of their way to see how bad they can make it and still sell. Every character is a caricature of a caricature. Like they took every trope they could find and then rammped it up to absurd. Just truly, unbelievably awful.
+
+ - Frozen, the 2013 Disney ultra-hit had been floating around my peripheries since it was released. I would hear the songs everywhere, my friends would talk about it, I would watch parts of it on various screens in various places. By the time I sat down to actually watch the thing from beginning to end, I had thought I knew what my opinion would be. Frozen seemed like a riff on the classic Disney princess formula, an upbeat fairy tale with colorful characters and great music. However, upon watching it closely for the first time, I quickly developed an overwhelmingly negative reaction.
+
+My dominating thought? Frozen should have been made using hand-drawn animation. Despite the movie's many strengths, I found this notion impossible to get past. Watching Frozen is a mildly enjoyable, but ultimately sterile experience. Against the memorable songs, the computer animation feels bland, uninspired, and, pardon the pun, cold.
+
+The story is indeed a riff on the Disney formula, with princesses and magical kingdoms and goofy sidekicks. It's formally efficient, not really much different in structure from any other Disney princess movie. Frozen leans towards some kind of girl empowerment message (which critics unsurprisingly blew out of proportion with transparent praise), but not in any way that Mulan or Princess and the Frog or Pocahontas didn't. And all three of those films are much better than Frozen. Why? Because they felt alive. The voice actors do their best to prop up the missing verve. Idina Menzel is a very good singer, she helps. Josh Gad has an amusing moment or two as Olaf. Kristen Bell, for her part, tries very hard, but her skittish modern girl act gets tiresome quick, and straight-up annoying the longer it goes.
+
+But it's not the story or the voice acting that makes Frozen feel dull. It's the animation. I have to preface my opinion by saying that I am open-minded about the strengths of CG animation. Obviously, it can be done tremendously well. It can work in tandem with the right story. Frozen is just not the right story. It is a classic Disney musical. It is crying out for classic Disney animation. It needs the warmth, personality, and texture of animation made by hand. Without that special touch, something feels "off". It is designed to look like an old-school cartoon, but it isn't one. The entire movie exists on an uneasy point between realism and idealism. Why try to awkwardly replicate an art style in the computer when the tools are there to do it for real?
+
+This is a topic that really winds me up. I don't think it's impossible to make a nostalgic Disney movie using CG animation. It can certainly be done (Frozen shows the difficulty inherent in trying, but nevertheless). What I stand passionately against, is the belief that CGI should replace an entire separate art form. There seems to be a common belief that hand-drawn animation or "2D animation" as some call it, is technically obsolete, like fax machines or paper maps. Or that it's too expensive, so it should be phased out of existence completely (The fact that Disney themselves have led this charge is doubly maddening). Traditional animation is an art form. Done well, it has the exact same appeal today as it did in 1937. The same way oil paintings can still be uniquely beautiful even after the invention of the photograph. But don't tell the animation studios this. They are content with throwing the entire medium in the trash, as if they simply cannot afford to scare audiences away with a "dead" technology. But would Frozen have been any less of a box-office hit if it were frame by frame the same movie, only drawn by hand? Absolutely not. In fact, it'd almost certainly be a better film. A film with more personality and charm, with more energy and life.
+
+I totally resent people's compulsion to simply declare Frozen's animation "beautiful" without any solid reasoning. What does "beautiful" really mean? That the snow looks like real snow? That the ice shoots across the whole screen in elaborate patterns? What does the increased complexity of computer animation really add if it forsakes the important charms hand-drawn animation provides? For a movie like Frozen, the answer is, nothing.
+
+You're making a fairy tale. You need an artistic reason to animate it with computers. It can't be the standard. Frozen has no reason. It is technically proficient. You've got a story, characters, and music that basically work, but animation that does not. Just because CG animation exists, doesn't mean hand-drawn animation has to retire. In fact, if Frozen proves anything, it's that even some modern stories deserve the timeless personal touch of pencil on paper.
+
+42/100
+
+ - ***THIS IS A PARTIAL SPOILER! DO NOT WATCH UNLESS U WANT THE ENDING RUINED********
+
+this movie was a horrible movie in my opinion. its so predictable. it was easy to find out whats coming up. and Allie being the old lady in the beginning and Noah being the guy reading to her was so obvious. i figured it out 20 minutes into the movie. how does that keep a guy guessing. i was so bored i had to make jokes to keep me awake.
+
+but for people who watch this movie watch when Noah has Allie against the wall and is making out with her, watch his hands cause he grabs her BREAST. now thats hilarious!
+
+the only unpredictable part was when they died together on allies bed that really touched my heart. but watching a movie for just one scene is not worth it.
+
+instead go to the movies or rent the interpreter. thats a movie worth watching. it has action, adventure, good acting, a good plot, and a UNPREDICTABLE ending.
+
+I'm WRITING THIS JUST SO I CAN HAVE 10 LINES LONG REVIEW. I WILL REPEAT TYPING Y JUST FOR FUN.YYY YYYYYYYYYYY YYYYYYY YYYYYY YYYYYYYYY YYYYYYYYYY YYYYYYY YYYYYY YYYYYY YYYY YYYYYYYY YYYYYYYYY YYYYYYY YYYYYYYYY YYYYYY YYYYYYY YYYY YYYYYY YYYYY YYYYYY YYYYYY YYYYYYYYYY YYYYYYYYYYY YYYYYY YYYYYYYYY YYYYYYYYYYYYYYY YYYYYYYYY YYYYYYYYYYYYY YYYYYYYYY YYYYYYYYYYY YYYYYYYYYY YYYYYYY YYYY YYYYY YYYY YYYYYY YYYYYYYY YYYYYYYYY YYYY YYYY
+
+----------------------------------------
+
+Cluster 2:
+ - A propaganda masterpiece, the actors act amazingly good and push certain agendas with their amazing performance.
+
+This film is one of the top 10 films you should show in classes when it comes to propaganda.
+
+Bravo!
+
+ - Extremely powerful at the end but you have to bear it for two hours to reach there. May be a great war movie for Americans ( no disrespect ) but for others it's extremely boring.
+
+ - Aharon Appelfeld wrote a novel, Badenheim 1939, a few years ago about poor Jewish souls who tried to ignore the impending Nazi invasion. I see no difference between Appelfeld's characters and the characters in Life is Beautiful.
+
+I've read the comments about how heroic the father is. Instead he was partially the creator of the tragedy. By blithely ignoring the world around him he helped seal his own fate.
+
+----------------------------------------
+
+Cluster 3:
+ - I was instructed that I need to enter in at least four lines for my vote/comment to count. So, I believe one word sums up Pulp Fiction: OVERRATED. It's not that it's a bad movie, it's just that everyone needs to wake up and realize there are a ton of movies better than this one.
+
+ - Ramanujan? Really? If Ramanujan is the closest person to describe the genius of Will, well, you need to take into account sleepless nights Ramanujan was suffering, his dedication to mathematics and his ambition to be recognized. He was studying like hell. And still, there were many mistakes in his initial letters to British mathematician Hardy. The only reason movie chooses to portray a methematical in such an unrealistic dimension is to manipulate your feelings. And this is why you are better off by not watching this movie.
+
+ - Rubbish, don't waste your time watching this movie.. The fictional story with the fictional ending and brutality everywhere!
+
+----------------------------------------
+
+Cluster 4:
+ - "There are amazing stories about Freddie Mercury," he explained. "The guy was wild. " However, Baron Cohen learned that these stories would not make the film. "They wanted to protect their legacy as a band."
+
+Baron Cohen
+
+
+That said, and having watched the movie with zero expectations since Sasha dropped the project, (not because of him dropping but for the reasons explained above), I must just confirm that he was dead right. Actually this movie could have been directed by Disney. This movie failed on so many levels, including massive distortions of well known facts that it is almost depressing to watch. Besides all the distortions which include the revelation of his diagnose just prior to the Live Aid performance, the band is characterized as angels sent to earth. There is not a single point in the movie that focus on the chemistry between the elements, and everything is reported on a very superficial level, that is actually sickening to watch after a while. The shots feel loose, and not connected at all, focusing just on some key events that are both distorted and close to the actual thing.
+
+For those that know the Biopic of Jim Morrison "The Doors", let me saw that that's what a Biopic should be like. Admittedly, being a bit far from perfect, a movie from the 90s actually trumps this one completely, and in every single aspect. In the end, it's not even about the lack of explicit or let's say, a more deeper look in to the wild side. It is the craft itself that failed completely. From poor dialog to the plastic cast, from the bad writing to the loose direction.
+
+I fail to completely understand all those high scores in here, but I guess they are; a) people that actually never saw a lot of movies in their life, and; b) not true Queen fans. Would this be the case, the score in here would actually match those of the critics. As a Queen fan myself I'm kinda disappointed, but again, I wasn't expecting much to begin with.
+
+ - Two things make this movie worth watching: the great acting by J.K. Simmons, and the nice visuals and editing. These, not surprisingly, received Oscar awards.
+
+But I believe the movie fails entirely at its core: music. The story mixes Full Metal Jacket with Shine to represent a bullying music teacher mistreating young students in some supposedly reputable jazz music academy. The whole focus is on the brilliant leading character who becomes obsessed with perfection, and on his lunatic teacher pushing him harder and harder.
+
+The big problem for me is the total lack of credibility. Music, as it is represented in this movie, works like gymnastics where there exists some ideal perfect execution to be obtained by exercising more and more. I think, on the contrary, that (good) music is more like dance, where there is no "perfect execution" but rather it involves taste, sensibility, and different points of view.
+
+An example of this is the song Caravan that is played multiple times throughout the movie. As a fan of good ol' jazz, I have to say I never listened to a worse execution! If you do not know what I am talking about please just search "Duke Ellington Caravan" on Youtube and then compare with this movie: Caravan is NOT about super-speed and perfect timing, it is about mood, swing and atmosphere, all things that seem totally unknown to whoever run the music department for Whiplash.
+
+If you are looking for a good movie about obsession for music I would definitely suggest Shine. If you look for a movie about music as a way to obtain freedom and elevation of spirit (and also some good laugh) there's The Concert. Or try Kieslowski's Trois couleurs Bleu, Mo' Better Blues, or maybe the TV series Mozart in the Jungle. Whiplash does not add anything interesting to the long list of films about music.
+
+ - How this movie is critically acclaimed is beyond me. Maybe it's not my genre, maybe I'm not the target audience, but I don't see anything in this movie worth watching it for. Except, like, Winona Ryder, and she was barely in it.
+
+This film is boring, and long, and devoid of anything to interest you, so you just have to sit there and wait for it to end. The shots are pretty for the first five minutes, I guess, and then you get tired of the ~symbolism~ and the monotone colours and realise the plot is basically nothing except mental illness and sex and stuff. I'm not sure who thought 'hey, I have a great idea for a movie' and pitched this pile of garbage, but I don't think we'd get along. I don't see the entertainment in watching Natalie Portman suffer and hallucinate. Who wants that?
+
+The only reason this movie got 2/10 instead of 1 is Winona Ryder. I think her acting is captivating no matter what role she's in, and I honestly wish this movie focused more on Beth, as her story is at a point I personally find more interesting - a bitter ballerina, formerly a big star, coming to the end of her career. While she acts as a warning of what is to come for Nina, and shows the toll that ballet can have on a dancer, I'd rather see her struggle than what actually goes down in this snoozefest.
+
+----------------------------------------
+
+Cluster 5:
+ - Very uninteresting Very boring. Not well told on film.
+
+Editing needed a lot of work. Needed more interesting supporting cast.
+
+Unnecessary embarrassing sexual scenes.
+
+Main actors were good, but not AA worthy as the movie stunk as a whole. We were looking forward to seeing this film. It was a big bomb. What happened? Well, it just flopped, in my opinion. Why is the Academy nominating this? It's all rigged, so who cares. It's the audience watching these films that should have the say. Not the Academy.
+
+Brian de Palma should have directed. I think it could have been terrific, but it went down the toilet.
+
+ - It was REALLY bad (notice how *REALLY* is in capital letters), I went with my mom & my moms friend, my moms friend is a little older than her, my mom is 49-years-old, I am a teenager, and I went to see this, and I knew it'd be amazing, because it's from Pixar, the makers of some of my favorite movies, and after last years AMAZING "Ratatouille" (in my top 10 favorite movies of ALL TIME), I knew this would be even BETTER. Boy, was I wrong. It was HORRIBLE, there were some funny parts, but I was never aware that there was like, 15 MINUTES OF DIALOG IN THE WHOLE MOVIE, all WALL-E says is "EVEEEE", and all Eve says is "WAAALLL-EEE", thats basically all the dialog in the WHOLE ENTIRE MOVIE. Trying sitting through that, because my mom couldn't, she SLEPT through it!!! What a joke, but the visuals were amazing, but I need dialog, unless it'll just be a snore-fest, which is was.
+
+ - I kept checking my watch in the theater during the movie. Every scene is way too long, not because of its time length, but because the dialogue is blah and the characters are grossly underdeveloped (except the Nazi Col. Jew Hunter).
+
+The fighting and shooting scenes are sloppy: defying logic and lacking grace. I wish John Woo were doing those sequences. Along that thought, I wish Lubitsch were doing the dialogue ("To Be or Not To Be" comes to mind), and Kubrick did the whole movie ("Dr. Strangelove" comes to mind)!
+
+Maybe all this is a big in-joke to you; to me, it's a bad movie I wish I didn't get. Quentin had brilliant ideas to start with, but he fumbled terribly in the execution.
+
+----------------------------------------
