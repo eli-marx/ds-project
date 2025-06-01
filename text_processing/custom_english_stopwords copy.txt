@@ -1,0 +1,220 @@
+i
+me
+my
+myself
+we
+our
+ours
+ourselves
+you
+your
+yours
+yourself
+yourselves
+he
+him
+his
+himself
+she
+her
+hers
+herself
+it
+its
+itself
+they
+them
+their
+theirs
+themselves
+what
+which
+who
+whom
+this
+that
+these
+those
+am
+is
+are
+was
+were
+be
+been
+being
+have
+has
+had
+having
+do
+does
+did
+doing
+a
+an
+the
+and
+but
+if
+or
+because
+as
+until
+while
+of
+at
+by
+for
+with
+about
+against
+between
+into
+through
+during
+before
+after
+above
+below
+to
+from
+up
+down
+in
+out
+on
+off
+over
+under
+again
+further
+then
+once
+here
+there
+when
+where
+why
+how
+all
+any
+both
+each
+few
+more
+most
+other
+some
+such
+no
+nor
+not
+only
+own
+same
+so
+than
+too
+very
+s
+t
+can
+will
+just
+don
+should
+now
+story
+thing
+time
+music
+audience
+book
+screenplay
+screenplays
+think
+know
+make
+way
+watch
+watching
+movie
+like
+just
+watch
+really
+movies
+film
+films
+time
+<MOVIE_TITLE>
+se7en
+catch me if you can
+the matrix
+saving private ryan
+inside out
+spirited away
+inception
+the imitation game
+black swan
+the prestige
+gone girl
+wall·e
+slumdog millionaire
+life is beautiful
+inglourious basterds
+la la land
+whiplash
+terminator 2: judgment day
+shutter island
+the shawshank redemption
+12 angry men
+spider-man: into the spider-verse
+coco
+léon: the professional
+the silence of the lambs
+schindler's list
+green book
+hacksaw ridge
+the intouchables
+lock, stock and two smoking barrels
+pulp fiction
+joker
+the grand budapest hotel
+pirates of the caribbean: the curse of the black pearl
+the godfather
+interstellar
+psycho
+toy story 3
+the curious case of benjamin button
+memento
+the green mile
+forrest gump
+frozen
+up
+avatar
+monsters, inc.
+one flew over the cuckoo's nest
+harry potter and the sorcerer's stone
+parasite
+life of pi
+the truman show
+the martian
+the sixth sense
+the lord of the rings: the return of the king
+good will hunting
+2001: a space odyssey
+a beautiful mind
+fight club
+mad max: fury road
+the notebook
+the bourne ultimatum
+the lion king
+the pianist
+the dark knight
+titanic
+how to train your dragon
+bohemian rhapsody
+django unchained
+
