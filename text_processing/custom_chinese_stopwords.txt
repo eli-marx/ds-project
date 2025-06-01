@@ -1,0 +1,155 @@
+screenplay
+screenplays
+think
+know
+make
+way
+watch
+watching
+movie
+like
+just
+watch
+really
+movies
+film
+films
+time
+<MOVIE_TITLE>
+十二怒汉
+12怒汉
+2001太空漫游
+美丽心灵
+阿凡达
+黑天鹅
+波西米亚狂想曲
+逍遥法外
+寻梦环游记
+被解救的姜戈
+搏击俱乐部
+阿甘正传
+冰雪奇缘
+消失的爱人
+心灵捕手
+绿皮书
+血战钢锯岭
+哈利·波特与魔法石
+驯龙高手
+盗梦空间
+无耻混蛋
+头脑特工队
+星际穿越
+小丑
+爱乐之城
+美丽人生
+少年派的奇幻漂流
+两杆大烟枪
+这个杀手不太冷
+疯狂的麦克斯：狂暴之路
+记忆碎片
+怪兽电力公司
+飞越疯人院
+寄生虫
+加勒比海盗：黑珍珠号的诅咒
+惊魂记
+低俗小说
+拯救大兵瑞恩
+辛德勒的名单
+七宗罪
+禁闭岛
+贫民窟的百万富翁
+蜘蛛侠：平行宇宙
+千与千寻
+终结者2：审判日
+谍影重重3
+本杰明·巴顿奇事
+蝙蝠侠：黑暗骑士
+教父
+布达佩斯大饭店
+绿里奇迹
+模仿游戏
+触不可及
+狮子王
+指环王：王者归来
+火星救援
+黑客帝国
+恋恋笔记本
+钢琴家
+致命魔术
+肖申克的救赎
+沉默的羔羊
+第六感
+楚门的世界
+泰坦尼克号
+玩具总动员3
+飞屋环游记
+机器人总动员
+爆裂鼓手
+se7en
+catch me if you can
+the matrix
+saving private ryan
+inside out
+spirited away
+inception
+the imitation game
+black swan
+the prestige
+gone girl
+wall·e
+slumdog millionaire
+life is beautiful
+inglourious basterds
+la la land
+whiplash
+terminator 2: judgment day
+shutter island
+the shawshank redemption
+12 angry men
+spider-man: into the spider-verse
+coco
+léon: the professional
+the silence of the lambs
+schindler's list
+green book
+hacksaw ridge
+the intouchables
+lock, stock and two smoking barrels
+pulp fiction
+joker
+the grand budapest hotel
+pirates of the caribbean: the curse of the black pearl
+the godfather
+interstellar
+psycho
+toy story 3
+the curious case of benjamin button
+memento
+the green mile
+forrest gump
+frozen
+up
+avatar
+monsters, inc.
+one flew over the cuckoo's nest
+harry potter and the sorcerer's stone
+parasite
+life of pi
+the truman show
+the martian
+the sixth sense
+the lord of the rings: the return of the king
+good will hunting
+2001: a space odyssey
+a beautiful mind
+fight club
+mad max: fury road
+the notebook
+the bourne ultimatum
+the lion king
+the pianist
+the dark knight
+titanic
+how to train your dragon
+bohemian rhapsody
+django unchained
