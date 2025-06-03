@@ -1,0 +1,292 @@
+CHINESE:
+Cluster 0 - Theme Scores:
+  Acting/Performance: 2.37 mentions per review
+  Plot/Story: 2.13 mentions per review
+  Genre-specific: 1.65 mentions per review
+  Cultural/Social Commentary: 1.37 mentions per review
+  Direction: 1.04 mentions per review
+  Critical/Analytical: 0.78 mentions per review
+  Emotional Response: 0.78 mentions per review
+  Technical/Cinematography: 0.71 mentions per review
+  Time/Historical Context: 0.44 mentions per review
+  Production/Industry: 0.43 mentions per review
+  Audience/Reception: 0.43 mentions per review
+  Political/Ideological Sentiment: 0.23 mentions per review
+
+Cluster 1 - Theme Scores:
+  Plot/Story: 2.37 mentions per review
+  Genre-specific: 1.67 mentions per review
+  Acting/Performance: 1.50 mentions per review
+  Emotional Response: 1.17 mentions per review
+  Technical/Cinematography: 1.02 mentions per review
+  Direction: 0.78 mentions per review
+  Critical/Analytical: 0.77 mentions per review
+  Cultural/Social Commentary: 0.72 mentions per review
+  Audience/Reception: 0.56 mentions per review
+  Time/Historical Context: 0.41 mentions per review
+  Production/Industry: 0.25 mentions per review
+  Political/Ideological Sentiment: 0.17 mentions per review
+
+Cluster 2 - Theme Scores:
+  Cultural/Social Commentary: 2.31 mentions per review
+  Plot/Story: 1.48 mentions per review
+  Genre-specific: 1.29 mentions per review
+  Acting/Performance: 1.04 mentions per review
+  Emotional Response: 0.79 mentions per review
+  Critical/Analytical: 0.63 mentions per review
+  Political/Ideological Sentiment: 0.60 mentions per review
+  Direction: 0.50 mentions per review
+  Production/Industry: 0.45 mentions per review
+  Technical/Cinematography: 0.43 mentions per review
+  Audience/Reception: 0.41 mentions per review
+  Time/Historical Context: 0.23 mentions per review
+
+Cluster 3 - Theme Scores:
+  Acting/Performance: 3.47 mentions per review
+  Direction: 3.42 mentions per review
+  Plot/Story: 3.00 mentions per review
+  Genre-specific: 1.88 mentions per review
+  Technical/Cinematography: 1.26 mentions per review
+  Emotional Response: 1.18 mentions per review
+  Critical/Analytical: 1.17 mentions per review
+  Cultural/Social Commentary: 1.17 mentions per review
+  Audience/Reception: 1.00 mentions per review
+  Production/Industry: 0.67 mentions per review
+  Time/Historical Context: 0.39 mentions per review
+  Political/Ideological Sentiment: 0.34 mentions per review
+
+Cluster 4 - Theme Scores:
+  Cultural/Social Commentary: 2.13 mentions per review
+  Genre-specific: 1.90 mentions per review
+  Plot/Story: 1.77 mentions per review
+  Acting/Performance: 1.30 mentions per review
+  Emotional Response: 0.99 mentions per review
+  Direction: 0.66 mentions per review
+  Critical/Analytical: 0.65 mentions per review
+  Technical/Cinematography: 0.64 mentions per review
+  Audience/Reception: 0.39 mentions per review
+  Time/Historical Context: 0.34 mentions per review
+  Political/Ideological Sentiment: 0.32 mentions per review
+  Production/Industry: 0.21 mentions per review
+
+Cluster 5 - Theme Scores:
+  Plot/Story: 3.19 mentions per review
+  Acting/Performance: 2.92 mentions per review
+  Genre-specific: 2.31 mentions per review
+  Cultural/Social Commentary: 1.65 mentions per review
+  Emotional Response: 1.58 mentions per review
+  Technical/Cinematography: 1.28 mentions per review
+  Direction: 1.22 mentions per review
+  Critical/Analytical: 1.04 mentions per review
+  Audience/Reception: 0.71 mentions per review
+  Production/Industry: 0.41 mentions per review
+  Political/Ideological Sentiment: 0.37 mentions per review
+  Time/Historical Context: 0.34 mentions per review
+
+  Cluster 0:
+  Size: 257 reviews
+  Top movies:
+    - The Dark Knight: 37 reviews
+    - Hacksaw Ridge: 24 reviews
+    - Interstellar: 20 reviews
+    - Se7en: 11 reviews
+    - Schindler's List: 10 reviews
+
+Cluster 1:
+  Size: 413 reviews
+  Top movies:
+    - 2001: A Space Odyssey: 36 reviews
+    - Inception: 31 reviews
+    - Interstellar: 24 reviews
+    - La La Land: 15 reviews
+    - Fight Club: 15 reviews
+
+Cluster 2:
+  Size: 313 reviews
+  Top movies:
+    - Green Book: 37 reviews
+    - Joker: 27 reviews
+    - Parasite: 20 reviews
+    - Se7en: 17 reviews
+    - Avatar: 13 reviews
+
+Cluster 3:
+  Size: 433 reviews
+  Top movies:
+    - Life of Pi: 31 reviews
+    - Avatar: 23 reviews
+    - Titanic: 19 reviews
+    - Inglourious Basterds: 18 reviews
+    - The Prestige: 17 reviews
+
+Cluster 4:
+  Size: 253 reviews
+  Top movies:
+    - The Notebook: 20 reviews
+    - Parasite: 19 reviews
+    - Coco: 16 reviews
+    - Whiplash: 14 reviews
+    - Forrest Gump: 13 reviews
+
+Cluster 5:
+  Size: 484 reviews
+  Top movies:
+    - La La Land: 43 reviews
+    - Coco: 23 reviews
+    - Whiplash: 19 reviews
+    - Léon: The Professional: 18 reviews
+    - The Notebook: 18 reviews
+
+ENGLISH:
+
+
+Cluster 0:
+  Size: 1225 reviews
+  Top movies:
+    - Bohemian Rhapsody: 84 reviews
+    - La La Land: 59 reviews
+    - Joker: 48 reviews
+    - A Beautiful Mind: 45 reviews
+    - Titanic: 44 reviews
+  Average rating: 2.43
+  Rating std: 1.17
+
+Cluster 1:
+  Size: 1492 reviews
+  Top movies:
+    - Interstellar: 56 reviews
+    - Fight Club: 54 reviews
+    - Inside Out: 53 reviews
+    - Inception: 45 reviews
+    - The Notebook: 44 reviews
+  Average rating: 2.45
+  Rating std: 1.13
+
+Cluster 2:
+  Size: 428 reviews
+  Top movies:
+    - Saving Private Ryan: 103 reviews
+    - Inglourious Basterds: 66 reviews
+    - Life Is Beautiful: 62 reviews
+    - Schindler's List: 45 reviews
+    - Hacksaw Ridge: 42 reviews
+  Average rating: 2.48
+  Rating std: 1.18
+
+Cluster 3:
+  Size: 998 reviews
+  Top movies:
+    - The Shawshank Redemption: 60 reviews
+    - Joker: 49 reviews
+    - Bohemian Rhapsody: 48 reviews
+    - Parasite: 47 reviews
+    - 2001: A Space Odyssey: 38 reviews
+  Average rating: 2.08
+  Rating std: 1.17
+
+Cluster 4:
+  Size: 1678 reviews
+  Top movies:
+    - Django Unchained: 76 reviews
+    - Titanic: 71 reviews
+    - The Dark Knight: 60 reviews
+    - Inglourious Basterds: 59 reviews
+    - Avatar: 51 reviews
+  Average rating: 2.44
+  Rating std: 1.16
+
+Cluster 5:
+  Size: 1886 reviews
+  Top movies:
+    - Avatar: 76 reviews
+    - Interstellar: 67 reviews
+    - Gone Girl: 67 reviews
+    - 2001: A Space Odyssey: 64 reviews
+    - The Dark Knight: 62 reviews
+  Average rating: 2.38
+  Rating std: 1.17
+
+
+Cluster 0 - Theme Scores:
+  Acting/Performance: 3.17 mentions per review
+  Plot/Story: 1.33 mentions per review
+  Emotional Response: 1.26 mentions per review
+  Genre-specific: 0.72 mentions per review
+  Direction: 0.67 mentions per review
+  Technical/Cinematography: 0.57 mentions per review
+  Critical/Analytical: 0.45 mentions per review
+  Production/Industry: 0.30 mentions per review
+  Audience/Reception: 0.17 mentions per review
+  Cultural/Social Commentary: 0.14 mentions per review
+  Time/Historical Context: 0.09 mentions per review
+  Political/Ideological Sentiment: 0.05 mentions per review
+
+Cluster 1 - Theme Scores:
+  Plot/Story: 2.73 mentions per review
+  Acting/Performance: 2.71 mentions per review
+  Emotional Response: 1.71 mentions per review
+  Genre-specific: 1.51 mentions per review
+  Technical/Cinematography: 0.78 mentions per review
+  Direction: 0.63 mentions per review
+  Critical/Analytical: 0.47 mentions per review
+  Production/Industry: 0.43 mentions per review
+  Cultural/Social Commentary: 0.41 mentions per review
+  Audience/Reception: 0.32 mentions per review
+  Time/Historical Context: 0.17 mentions per review
+  Political/Ideological Sentiment: 0.16 mentions per review
+
+Cluster 2 - Theme Scores:
+  Genre-specific: 2.36 mentions per review
+  Acting/Performance: 2.24 mentions per review
+  Direction: 1.80 mentions per review
+  Plot/Story: 1.76 mentions per review
+  Emotional Response: 1.26 mentions per review
+  Technical/Cinematography: 0.51 mentions per review
+  Critical/Analytical: 0.49 mentions per review
+  Production/Industry: 0.35 mentions per review
+  Audience/Reception: 0.27 mentions per review
+  Political/Ideological Sentiment: 0.24 mentions per review
+  Cultural/Social Commentary: 0.18 mentions per review
+  Time/Historical Context: 0.15 mentions per review
+
+Cluster 3 - Theme Scores:
+  Emotional Response: 0.60 mentions per review
+  Plot/Story: 0.59 mentions per review
+  Genre-specific: 0.21 mentions per review
+  Acting/Performance: 0.20 mentions per review
+  Technical/Cinematography: 0.18 mentions per review
+  Critical/Analytical: 0.16 mentions per review
+  Cultural/Social Commentary: 0.08 mentions per review
+  Production/Industry: 0.05 mentions per review
+  Direction: 0.05 mentions per review
+  Audience/Reception: 0.04 mentions per review
+  Time/Historical Context: 0.04 mentions per review
+  Political/Ideological Sentiment: 0.02 mentions per review
+
+Cluster 4 - Theme Scores:
+  Acting/Performance: 4.53 mentions per review
+  Plot/Story: 3.13 mentions per review
+  Emotional Response: 2.44 mentions per review
+  Direction: 2.08 mentions per review
+  Genre-specific: 1.67 mentions per review
+  Technical/Cinematography: 1.47 mentions per review
+  Critical/Analytical: 0.90 mentions per review
+  Production/Industry: 0.74 mentions per review
+  Audience/Reception: 0.43 mentions per review
+  Cultural/Social Commentary: 0.29 mentions per review
+  Time/Historical Context: 0.23 mentions per review
+  Political/Ideological Sentiment: 0.12 mentions per review
+
+Cluster 5 - Theme Scores:
+  Plot/Story: 2.05 mentions per review
+  Emotional Response: 1.60 mentions per review
+  Acting/Performance: 1.53 mentions per review
+  Technical/Cinematography: 0.71 mentions per review
+  Genre-specific: 0.71 mentions per review
+  Critical/Analytical: 0.63 mentions per review
+  Direction: 0.42 mentions per review
+  Production/Industry: 0.28 mentions per review
+  Audience/Reception: 0.14 mentions per review
+  Cultural/Social Commentary: 0.10 mentions per review
+  Time/Historical Context: 0.07 mentions per review
+  Political/Ideological Sentiment: 0.04 mentions per review
