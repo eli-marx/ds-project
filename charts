@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review Themes: Cultural Comparison</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: white;
+            color: #333;
+            line-height: 1.4;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        .charts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 20px 0;
+        }
+        
+        .chart-section {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .chart-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+        
+        .chart-subtitle {
+            font-size: 12px;
+            color: #7f8c8d;
+            text-align: center;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 15px 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-circle {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        
+        .axis-label {
+            font-size: 11px;
+            fill: #666;
+            font-weight: bold;
+        }
+        
+        .grid-label {
+            font-size: 10px;
+            fill: #888;
+        }
+        
+        .theme-label {
+            font-size: 10px;
+            font-weight: 600;
+            fill: #333;
+        }
+        
+        .comparison-value {
+            font-size: 10px;
+            font-weight: bold;
+            fill: #333;
+        }
+
+        @media print {
+            .container {
+                max-width: none;
+            }
+            .charts-container {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="charts-container">
+            <div class="chart-section">
+                <div class="chart-title">Radial Theme Distribution</div>
+                <div class="chart-subtitle">Percentage of Total Thematic Focus</div>
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-circle" style="background: #2980b9;"></div>
+                        <span>English</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-circle" style="background: #e74c3c;"></div>
+                        <span>Chinese</span>
+                    </div>
+                </div>
+                <svg id="radialChart"></svg>
+            </div>
+            
+            <div class="chart-section">
+                <div class="chart-title">Cultural Emphasis Comparison</div>
+                <div class="chart-subtitle">Relative Emphasis Ratio (sorted by Chinese advantage)</div>
+                <svg id="comparisonChart"></svg>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data processing and normalization
+        const chineseData = {
+            0: {"Acting/Performance": 2.37, "Plot/Story": 2.13, "Genre-specific": 1.65, "Cultural/Social Commentary": 1.37, "Direction": 1.04, "Critical/Analytical": 0.78, "Emotional Response": 0.78, "Technical/Cinematography": 0.71, "Time/Historical Context": 0.44, "Production/Industry": 0.43, "Audience/Reception": 0.43, "Political/Ideological Sentiment": 0.23},
+            1: {"Plot/Story": 2.37, "Genre-specific": 1.67, "Acting/Performance": 1.50, "Emotional Response": 1.17, "Technical/Cinematography": 1.02, "Direction": 0.78, "Critical/Analytical": 0.77, "Cultural/Social Commentary": 0.72, "Audience/Reception": 0.56, "Time/Historical Context": 0.41, "Production/Industry": 0.25, "Political/Ideological Sentiment": 0.17},
+            2: {"Cultural/Social Commentary": 2.31, "Plot/Story": 1.48, "Genre-specific": 1.29, "Acting/Performance": 1.04, "Emotional Response": 0.79, "Critical/Analytical": 0.63, "Political/Ideological Sentiment": 0.60, "Direction": 0.50, "Production/Industry": 0.45, "Technical/Cinematography": 0.43, "Audience/Reception": 0.41, "Time/Historical Context": 0.23},
+            3: {"Acting/Performance": 3.47, "Direction": 3.42, "Plot/Story": 3.00, "Genre-specific": 1.88, "Technical/Cinematography": 1.26, "Emotional Response": 1.18, "Critical/Analytical": 1.17, "Cultural/Social Commentary": 1.17, "Audience/Reception": 1.00, "Production/Industry": 0.67, "Time/Historical Context": 0.39, "Political/Ideological Sentiment": 0.34},
+            4: {"Cultural/Social Commentary": 2.13, "Genre-specific": 1.90, "Plot/Story": 1.77, "Acting/Performance": 1.30, "Emotional Response": 0.99, "Direction": 0.66, "Critical/Analytical": 0.65, "Technical/Cinematography": 0.64, "Audience/Reception": 0.39, "Time/Historical Context": 0.34, "Political/Ideological Sentiment": 0.32, "Production/Industry": 0.21},
+            5: {"Plot/Story": 3.19, "Acting/Performance": 2.92, "Genre-specific": 2.31, "Cultural/Social Commentary": 1.65, "Emotional Response": 1.58, "Technical/Cinematography": 1.28, "Direction": 1.22, "Critical/Analytical": 1.04, "Audience/Reception": 0.71, "Production/Industry": 0.41, "Political/Ideological Sentiment": 0.37, "Time/Historical Context": 0.34}
+        };
+
+        const englishData = {
+            0: {"Acting/Performance": 3.17, "Plot/Story": 1.33, "Emotional Response": 1.26, "Genre-specific": 0.72, "Direction": 0.67, "Technical/Cinematography": 0.57, "Critical/Analytical": 0.45, "Production/Industry": 0.30, "Audience/Reception": 0.17, "Cultural/Social Commentary": 0.14, "Time/Historical Context": 0.09, "Political/Ideological Sentiment": 0.05},
+            1: {"Plot/Story": 2.73, "Acting/Performance": 2.71, "Emotional Response": 1.71, "Genre-specific": 1.51, "Technical/Cinematography": 0.78, "Direction": 0.63, "Critical/Analytical": 0.47, "Production/Industry": 0.43, "Cultural/Social Commentary": 0.41, "Audience/Reception": 0.32, "Time/Historical Context": 0.17, "Political/Ideological Sentiment": 0.16},
+            2: {"Genre-specific": 2.36, "Acting/Performance": 2.24, "Direction": 1.80, "Plot/Story": 1.76, "Emotional Response": 1.26, "Technical/Cinematography": 0.51, "Critical/Analytical": 0.49, "Production/Industry": 0.35, "Audience/Reception": 0.27, "Political/Ideological Sentiment": 0.24, "Cultural/Social Commentary": 0.18, "Time/Historical Context": 0.15},
+            3: {"Emotional Response": 0.60, "Plot/Story": 0.59, "Genre-specific": 0.21, "Acting/Performance": 0.20, "Technical/Cinematography": 0.18, "Critical/Analytical": 0.16, "Cultural/Social Commentary": 0.08, "Production/Industry": 0.05, "Direction": 0.05, "Audience/Reception": 0.04, "Time/Historical Context": 0.04, "Political/Ideological Sentiment": 0.02},
+            4: {"Acting/Performance": 4.53, "Plot/Story": 3.13, "Emotional Response": 2.44, "Direction": 2.08, "Genre-specific": 1.67, "Technical/Cinematography": 1.47, "Critical/Analytical": 0.90, "Production/Industry": 0.74, "Audience/Reception": 0.43, "Cultural/Social Commentary": 0.29, "Time/Historical Context": 0.23, "Political/Ideological Sentiment": 0.12},
+            5: {"Plot/Story": 2.05, "Emotional Response": 1.60, "Acting/Performance": 1.53, "Technical/Cinematography": 0.71, "Genre-specific": 0.71, "Critical/Analytical": 0.63, "Direction": 0.42, "Production/Industry": 0.28, "Audience/Reception": 0.14, "Cultural/Social Commentary": 0.10, "Time/Historical Context": 0.07, "Political/Ideological Sentiment": 0.04}
+        };
+
+        // Calculate averages
+        function calculateAverages(data) {
+            const themes = Object.keys(data[0]);
+            const averages = {};
+            
+            themes.forEach(theme => {
+                const sum = Object.keys(data).reduce((acc, cluster) => acc + data[cluster][theme], 0);
+                averages[theme] = sum / Object.keys(data).length;
+            });
+            
+            return averages;
+        }
+
+        const chineseAverage = calculateAverages(chineseData);
+        const englishAverage = calculateAverages(englishData);
+
+        // Normalize data so both cultures sum to the same total (proportion-based comparison)
+        function normalizeData(data) {
+            const total = Object.values(data).reduce((sum, val) => sum + val, 0);
+            const normalized = {};
+            Object.keys(data).forEach(key => {
+                normalized[key] = data[key] / total;
+            });
+            return normalized;
+        }
+
+        const chineseNormalized = normalizeData(chineseAverage);
+        const englishNormalized = normalizeData(englishAverage);
+
+        // Theme ordering (placing related themes near each other)
+        const themeOrder = [
+            "Acting/Performance",
+            "Direction", 
+            "Technical/Cinematography",
+            "Critical/Analytical",
+            "Genre-specific",
+            "Plot/Story",
+            "Emotional Response",
+            "Audience/Reception",
+            "Production/Industry",
+            "Cultural/Social Commentary",
+            "Political/Ideological Sentiment",
+            "Time/Historical Context"
+        ];
+
+        // RADIAL CHART
+        function createRadialChart() {
+            const width = 550;
+            const height = 500;
+            const radius = Math.min(width, height) / 2 - 100;
+            
+            const svg = d3.select("#radialChart")
+                .attr("width", width)
+                .attr("height", height);
+            
+            const g = svg.append("g")
+                .attr("transform", `translate(${width/2}, ${height/2})`);
+
+            // Scales
+            const angleScale = d3.scaleLinear()
+                .domain([0, themeOrder.length])
+                .range([0, 2 * Math.PI]);
+
+            const chineseCurrentData = chineseNormalized;
+            const englishCurrentData = englishNormalized;
+
+            const maxValue = Math.max(
+                ...Object.values(chineseCurrentData),
+                ...Object.values(englishCurrentData)
+            );
+
+            const radiusScale = d3.scaleLinear()
+                .domain([0, maxValue])
+                .range([0, radius]);
+
+            // Add grid circles with percentage labels
+            const gridLevels = 4;
+            const percentageSteps = maxValue / gridLevels;
+            
+            for (let i = 1; i <= gridLevels; i++) {
+                const currentRadius = (radius / gridLevels) * i;
+                const percentage = (percentageSteps * i * 100).toFixed(1);
+                
+                g.append("circle")
+                    .attr("r", currentRadius)
+                    .attr("fill", "none")
+                    .attr("stroke", "#e0e0e0")
+                    .attr("stroke-width", 1);
+                
+                // Add percentage labels
+                g.append("text")
+                    .attr("x", 5)
+                    .attr("y", -currentRadius + 3)
+                    .attr("class", "grid-label")
+                    .text(`${percentage}%`);
+            }
+
+            // Add grid lines
+            themeOrder.forEach((theme, i) => {
+                const angle = angleScale(i) - Math.PI / 2;
+                g.append("line")
+                    .attr("x1", 0)
+                    .attr("y1", 0)
+                    .attr("x2", radius * Math.cos(angle))
+                    .attr("y2", radius * Math.sin(angle))
+                    .attr("stroke", "#f5f5f5")
+                    .attr("stroke-width", 1);
+            });
+
+            // Create data points
+            const chinesePoints = themeOrder.map((theme, i) => {
+                const angle = angleScale(i) - Math.PI / 2;
+                const r = radiusScale(chineseCurrentData[theme]);
+                return {
+                    theme,
+                    value: chineseCurrentData[theme],
+                    x: r * Math.cos(angle),
+                    y: r * Math.sin(angle),
+                    angle: angle
+                };
+            });
+
+            const englishPoints = themeOrder.map((theme, i) => {
+                const angle = angleScale(i) - Math.PI / 2;
+                const r = radiusScale(englishCurrentData[theme]);
+                return {
+                    theme,
+                    value: englishCurrentData[theme],
+                    x: r * Math.cos(angle),
+                    y: r * Math.sin(angle),
+                    angle: angle
+                };
+            });
+
+            // Line generator
+            const line = d3.line()
+                .x(d => d.x)
+                .y(d => d.y)
+                .curve(d3.curveLinearClosed);
+
+            // Add areas
+            g.append("path")
+                .datum(chinesePoints)
+                .attr("d", line)
+                .attr("fill", "#e74c3c")
+                .attr("fill-opacity", 0.25)
+                .attr("stroke", "#e74c3c")
+                .attr("stroke-width", 2.5);
+
+            g.append("path")
+                .datum(englishPoints)
+                .attr("d", line)
+                .attr("fill", "#2980b9")
+                .attr("fill-opacity", 0.25)
+                .attr("stroke", "#2980b9")
+                .attr("stroke-width", 2.5);
+
+            // Add points without value labels
+            chinesePoints.forEach(d => {
+                g.append("circle")
+                    .attr("cx", d.x)
+                    .attr("cy", d.y)
+                    .attr("r", 5)
+                    .attr("fill", "#e74c3c")
+                    .attr("stroke", "white")
+                    .attr("stroke-width", 2);
+            });
+
+            englishPoints.forEach(d => {
+                g.append("circle")
+                    .attr("cx", d.x)
+                    .attr("cy", d.y)
+                    .attr("r", 5)
+                    .attr("fill", "#2980b9")
+                    .attr("stroke", "white")
+                    .attr("stroke-width", 2);
+            });
+
+            // Add theme labels
+            themeOrder.forEach((theme, i) => {
+                const angle = angleScale(i) - Math.PI / 2;
+                const labelRadius = radius + 50;
+                const x = labelRadius * Math.cos(angle);
+                const y = labelRadius * Math.sin(angle);
+                
+                // Shorten long labels for better fit
+                let displayTheme = theme;
+                if (theme === "Cultural/Social Commentary") displayTheme = "Cultural/Social";
+                if (theme === "Political/Ideological Sentiment") displayTheme = "Political/Ideological";
+                if (theme === "Technical/Cinematography") displayTheme = "Technical/Cinema";
+                if (theme === "Time/Historical Context") displayTheme = "Time/Historical";
+                
+                g.append("text")
+                    .attr("x", x)
+                    .attr("y", y)
+                    .attr("text-anchor", "middle")
+                    .attr("dominant-baseline", "middle")
+                    .attr("class", "theme-label")
+                    .text(displayTheme);
+            });
+        }
+
+        // COMPARISON CHART
+        function createComparisonChart() {
+            const width = 550;
+            const height = 500;
+            const margin = {top: 40, right: 100, bottom: 50, left: 180};
+            const innerWidth = width - margin.left - margin.right;
+            const innerHeight = height - margin.top - margin.bottom;
+            
+            const svg = d3.select("#comparisonChart")
+                .attr("width", width)
+                .attr("height", height);
+            
+            const g = svg.append("g")
+                .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+            // Calculate ratios for comparison
+            const comparisonData = themeOrder.map(theme => {
+                const chineseVal = chineseNormalized[theme];
+                const englishVal = englishNormalized[theme];
+                const ratio = chineseVal / englishVal;
+                return {
+                    theme: theme,
+                    chineseVal: chineseVal,
+                    englishVal: englishVal,
+                    ratio: ratio,
+                    chineseAdvantage: ratio > 1 ? ratio - 1 : 0,
+                    englishAdvantage: ratio < 1 ? 1 - ratio : 0,
+                    displayTheme: theme.length > 20 ? theme.split('/')[0] + '/' + theme.split('/')[1].substring(0, 8) + '...' : theme
+                };
+            }).sort((a, b) => b.ratio - a.ratio);
+
+            const yScale = d3.scaleBand()
+                .domain(comparisonData.map(d => d.theme))
+                .range([0, innerHeight])
+                .padding(0.2);
+
+            const maxAdvantage = d3.max(comparisonData, d => Math.max(d.chineseAdvantage, d.englishAdvantage));
+            const xScale = d3.scaleLinear()
+                .domain([-maxAdvantage, maxAdvantage])
+                .range([0, innerWidth]);
+
+            // Add center line
+            g.append("line")
+                .attr("x1", xScale(0))
+                .attr("x2", xScale(0))
+                .attr("y1", 0)
+                .attr("y2", innerHeight)
+                .attr("stroke", "#95a5a6")
+                .attr("stroke-width", 2);
+
+            // Add tick marks and labels on x-axis
+            const tickValues = [-0.4, -0.2, 0, 0.2, 0.4].filter(d => d >= -maxAdvantage && d <= maxAdvantage);
+            tickValues.forEach(tick => {
+                g.append("line")
+                    .attr("x1", xScale(tick))
+                    .attr("x2", xScale(tick))
+                    .attr("y1", innerHeight)
+                    .attr("y2", innerHeight + 5)
+                    .attr("stroke", "#bdc3c7");
+                
+                g.append("text")
+                    .attr("x", xScale(tick))
+                    .attr("y", innerHeight + 20)
+                    .attr("text-anchor", "middle")
+                    .attr("class", "grid-label")
+                    .text(`${(tick * 100).toFixed(0)}%`);
+            });
+
+            // Add bars for Chinese advantage (right side)
+            comparisonData.filter(d => d.chineseAdvantage > 0).forEach(d => {
+                const barWidth = xScale(d.chineseAdvantage) - xScale(0);
+                g.append("rect")
+                    .attr("x", xScale(0))
+                    .attr("y", yScale(d.theme))
+                    .attr("width", barWidth)
+                    .attr("height", yScale.bandwidth())
+                    .attr("fill", "#e74c3c")
+                    .attr("opacity", 0.8);
+                
+                // Add ratio label
+                g.append("text")
+                    .attr("x", xScale(d.chineseAdvantage) + 5)
+                    .attr("y", yScale(d.theme) + yScale.bandwidth()/2 + 3)
+                    .attr("class", "comparison-value")
+                    .attr("fill", "#c0392b")
+                    .text(`${d.ratio.toFixed(1)}x`);
+            });
+
+            // Add bars for English advantage (left side)
+            comparisonData.filter(d => d.englishAdvantage > 0).forEach(d => {
+                g.append("rect")
+                    .attr("x", xScale(-d.englishAdvantage))
+                    .attr("y", yScale(d.theme))
+                    .attr("width", xScale(0) - xScale(-d.englishAdvantage))
+                    .attr("height", yScale.bandwidth())
+                    .attr("fill", "#2980b9")
+                    .attr("opacity", 0.8);
+                
+                // Add ratio label
+                g.append("text")
+                    .attr("x", xScale(-d.englishAdvantage) - 5)
+                    .attr("y", yScale(d.theme) + yScale.bandwidth()/2 + 3)
+                    .attr("text-anchor", "end")
+                    .attr("class", "comparison-value")
+                    .attr("fill", "#1f5582")
+                    .text(`${(1/d.ratio).toFixed(1)}x`);
+            });
+
+            // Add y-axis labels
+            comparisonData.forEach(d => {
+                let displayText = d.theme;
+                if (d.theme === "Cultural/Social Commentary") displayText = "Cultural/Social";
+                if (d.theme === "Political/Ideological Sentiment") displayText = "Political/Ideological";
+                if (d.theme === "Technical/Cinematography") displayText = "Technical/Cinema";
+                if (d.theme === "Time/Historical Context") displayText = "Time/Historical";
+                
+                g.append("text")
+                    .attr("x", -10)
+                    .attr("y", yScale(d.theme) + yScale.bandwidth()/2 + 3)
+                    .attr("text-anchor", "end")
+                    .attr("dominant-baseline", "middle")
+                    .attr("class", "theme-label")
+                    .text(displayText);
+            });
+
+            // Add axis labels
+            g.append("text")
+                .attr("x", xScale(-maxAdvantage/2))
+                .attr("y", -10)
+                .attr("text-anchor", "middle")
+                .attr("class", "axis-label")
+                .attr("fill", "#2980b9")
+                .text("← English Emphasis");
+
+            g.append("text")
+                .attr("x", xScale(maxAdvantage/2))
+                .attr("y", -10)
+                .attr("text-anchor", "middle")
+                .attr("class", "axis-label")
+                .attr("fill", "#e74c3c")
+                .text("Chinese Emphasis →");
+
+            // Add bottom axis label
+            g.append("text")
+                .attr("x", innerWidth/2)
+                .attr("y", innerHeight + 40)
+                .attr("text-anchor", "middle")
+                .attr("class", "axis-label")
+                .text("Relative Emphasis Difference (%)");
+        }
+
+        // Initialize charts
+        createRadialChart();
+        createComparisonChart();
+    </script>
+</body>
+</html>
